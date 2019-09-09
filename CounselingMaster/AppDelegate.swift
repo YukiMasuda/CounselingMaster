@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NCMB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        NCMB.setApplicationKey("871d2549bb417d365df19c828de41bfb34ceabb27b9ac584b5feced3e6b49d66", clientKey: "c7eafaad5341fb58ecdfffa486a6caac665c9c7bce40b3c29b290a9d96d8ff81")
+        
+        
+        let ud = UserDefaults.standard
+        let isLogin = ud.bool(forKey: "isLogin")
+        
+        if isLogin == true{
+            //ログイン中なら
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
+            self.window?.rootViewController = rootViewController
+            self.window?.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+            
+            
+        }else{
+            //ログインしていなかったら
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
+            self.window?.rootViewController = rootViewController
+            self.window?.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+            
+        }
+        
+        
+        
         return true
     }
 

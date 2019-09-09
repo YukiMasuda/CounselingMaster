@@ -3,25 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5109ADD223127D600050F6A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109ADD123127D600050F6A2 /* AppDelegate.swift */; };
-		5109ADD423127D600050F6A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109ADD323127D600050F6A2 /* ViewController.swift */; };
 		5109ADD723127D600050F6A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109ADD523127D600050F6A2 /* Main.storyboard */; };
 		5109ADD923127D610050F6A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5109ADD823127D610050F6A2 /* Assets.xcassets */; };
 		5109ADDC23127D610050F6A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109ADDA23127D610050F6A2 /* LaunchScreen.storyboard */; };
+		5109ADE423127DCF0050F6A2 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109ADE323127DCF0050F6A2 /* SignIn.storyboard */; };
+		5109ADE6231280EB0050F6A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109ADE5231280EB0050F6A2 /* SignInViewController.swift */; };
+		5109ADE8231280F90050F6A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109ADE7231280F90050F6A2 /* SignUpViewController.swift */; };
+		5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109AE092313B6540050F6A2 /* partsViewController.swift */; };
+		5109AE0C2313B6610050F6A2 /* clinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109AE0B2313B6610050F6A2 /* clinicViewController.swift */; };
+		5109AE102316363C0050F6A2 /* Interview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109AE0F2316363C0050F6A2 /* Interview.storyboard */; };
+		5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5123C74D2317ECB000D39C24 /* Profile.storyboard */; };
+		5123C7512317F30E00D39C24 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C7502317F30E00D39C24 /* ProfileViewController.swift */; };
+		5123C7722319080600D39C24 /* picturePlaceholder100.png in Resources */ = {isa = PBXBuildFile; fileRef = 5123C7712319080600D39C24 /* picturePlaceholder100.png */; };
+		5123C7742319080A00D39C24 /* picturePlaceholder50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5123C7732319080A00D39C24 /* picturePlaceholder50.png */; };
+		5123C77A231936B300D39C24 /* PartsRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C779231936B300D39C24 /* PartsRequestViewController.swift */; };
+		5123C77E231A3FDC00D39C24 /* SelectPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C77D231A3FDC00D39C24 /* SelectPartsViewController.swift */; };
+		5123C780231A3FF500D39C24 /* SelectSurgeryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C77F231A3FF500D39C24 /* SelectSurgeryViewController.swift */; };
+		5123C782231A401A00D39C24 /* DetailPositiveRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C781231A401A00D39C24 /* DetailPositiveRequestViewController.swift */; };
+		5123C784231A403700D39C24 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C783231A403700D39C24 /* OtherRequestViewController.swift */; };
+		5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */; };
+		5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C78C231E2A6B00D39C24 /* CartaViewController.swift */; };
+		51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D18CE72326225900FE18AA /* ClinicCarta.storyboard */; };
+		51F4ADE32317BAAC00B4C8CE /* Parts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */; };
+		51F4ADE82317C68900B4C8CE /* Carta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE72317C68900B4C8CE /* Carta.storyboard */; };
+		C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounselingMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		191B6FBEAC8A11F8FBF905F9 /* Pods-CounselingMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounselingMaster.release.xcconfig"; path = "Target Support Files/Pods-CounselingMaster/Pods-CounselingMaster.release.xcconfig"; sourceTree = "<group>"; };
+		40C8A33FE7190987CC87815B /* Pods-CounselingMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounselingMaster.debug.xcconfig"; path = "Target Support Files/Pods-CounselingMaster/Pods-CounselingMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		5109ADCE23127D600050F6A2 /* CounselingMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounselingMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5109ADD123127D600050F6A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5109ADD323127D600050F6A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5109ADD623127D600050F6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5109ADD823127D610050F6A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5109ADDB23127D610050F6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5109ADDD23127D610050F6A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5109ADE323127DCF0050F6A2 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		5109ADE5231280EB0050F6A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5109ADE7231280F90050F6A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5109AE092313B6540050F6A2 /* partsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = partsViewController.swift; sourceTree = "<group>"; };
+		5109AE0B2313B6610050F6A2 /* clinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clinicViewController.swift; sourceTree = "<group>"; };
+		5109AE0F2316363C0050F6A2 /* Interview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interview.storyboard; sourceTree = "<group>"; };
+		5123C74D2317ECB000D39C24 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5123C7502317F30E00D39C24 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5123C7712319080600D39C24 /* picturePlaceholder100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picturePlaceholder100.png; sourceTree = "<group>"; };
+		5123C7732319080A00D39C24 /* picturePlaceholder50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picturePlaceholder50.png; sourceTree = "<group>"; };
+		5123C779231936B300D39C24 /* PartsRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsRequestViewController.swift; sourceTree = "<group>"; };
+		5123C77D231A3FDC00D39C24 /* SelectPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartsViewController.swift; sourceTree = "<group>"; };
+		5123C77F231A3FF500D39C24 /* SelectSurgeryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSurgeryViewController.swift; sourceTree = "<group>"; };
+		5123C781231A401A00D39C24 /* DetailPositiveRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPositiveRequestViewController.swift; sourceTree = "<group>"; };
+		5123C783231A403700D39C24 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
+		5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNegativeRequestViewController.swift; sourceTree = "<group>"; };
+		5123C78C231E2A6B00D39C24 /* CartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaViewController.swift; sourceTree = "<group>"; };
+		51D18CE72326225900FE18AA /* ClinicCarta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClinicCarta.storyboard; sourceTree = "<group>"; };
+		51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parts.storyboard; sourceTree = "<group>"; };
+		51F4ADE72317C68900B4C8CE /* Carta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carta.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +83,8 @@
 			children = (
 				5109ADD023127D600050F6A2 /* CounselingMaster */,
 				5109ADCF23127D600050F6A2 /* Products */,
+				9BE61DB11E74AE0EDF127B1D /* Pods */,
+				6004C9253F144659FE365F43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +99,114 @@
 		5109ADD023127D600050F6A2 /* CounselingMaster */ = {
 			isa = PBXGroup;
 			children = (
+				5123C74F2317F2F000D39C24 /* TeamProfile */,
+				5123C770231907F400D39C24 /* Images */,
 				5109ADD123127D600050F6A2 /* AppDelegate.swift */,
-				5109ADD323127D600050F6A2 /* ViewController.swift */,
-				5109ADD523127D600050F6A2 /* Main.storyboard */,
+				5109AE4F231681970050F6A2 /* TeamSignIn */,
+				5109AE51231681FF0050F6A2 /* TeamMain */,
+				51F4ADDF2317B94300B4C8CE /* TeamParts */,
+				51F4ADE12317B97600B4C8CE /* TeamClinic */,
+				51F4ADE62317C66500B4C8CE /* TeamCarta */,
+				51D18CE9232624CD00FE18AA /* TeamClinicCarta */,
 				5109ADD823127D610050F6A2 /* Assets.xcassets */,
 				5109ADDA23127D610050F6A2 /* LaunchScreen.storyboard */,
+				5109AE0F2316363C0050F6A2 /* Interview.storyboard */,
 				5109ADDD23127D610050F6A2 /* Info.plist */,
 			);
 			path = CounselingMaster;
+			sourceTree = "<group>";
+		};
+		5109AE4F231681970050F6A2 /* TeamSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				5109ADE5231280EB0050F6A2 /* SignInViewController.swift */,
+				5109ADE7231280F90050F6A2 /* SignUpViewController.swift */,
+				5109ADE323127DCF0050F6A2 /* SignIn.storyboard */,
+			);
+			path = TeamSignIn;
+			sourceTree = "<group>";
+		};
+		5109AE51231681FF0050F6A2 /* TeamMain */ = {
+			isa = PBXGroup;
+			children = (
+				5109AE092313B6540050F6A2 /* partsViewController.swift */,
+				5109AE0B2313B6610050F6A2 /* clinicViewController.swift */,
+				5109ADD523127D600050F6A2 /* Main.storyboard */,
+			);
+			path = TeamMain;
+			sourceTree = "<group>";
+		};
+		5123C74F2317F2F000D39C24 /* TeamProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5123C74D2317ECB000D39C24 /* Profile.storyboard */,
+				5123C7502317F30E00D39C24 /* ProfileViewController.swift */,
+			);
+			path = TeamProfile;
+			sourceTree = "<group>";
+		};
+		5123C770231907F400D39C24 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5123C7732319080A00D39C24 /* picturePlaceholder50.png */,
+				5123C7712319080600D39C24 /* picturePlaceholder100.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		51D18CE9232624CD00FE18AA /* TeamClinicCarta */ = {
+			isa = PBXGroup;
+			children = (
+				51D18CE72326225900FE18AA /* ClinicCarta.storyboard */,
+			);
+			path = TeamClinicCarta;
+			sourceTree = "<group>";
+		};
+		51F4ADDF2317B94300B4C8CE /* TeamParts */ = {
+			isa = PBXGroup;
+			children = (
+				51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */,
+				5123C77D231A3FDC00D39C24 /* SelectPartsViewController.swift */,
+				5123C779231936B300D39C24 /* PartsRequestViewController.swift */,
+				5123C77F231A3FF500D39C24 /* SelectSurgeryViewController.swift */,
+				5123C781231A401A00D39C24 /* DetailPositiveRequestViewController.swift */,
+				5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */,
+				5123C783231A403700D39C24 /* OtherRequestViewController.swift */,
+			);
+			path = TeamParts;
+			sourceTree = "<group>";
+		};
+		51F4ADE12317B97600B4C8CE /* TeamClinic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TeamClinic;
+			sourceTree = "<group>";
+		};
+		51F4ADE62317C66500B4C8CE /* TeamCarta */ = {
+			isa = PBXGroup;
+			children = (
+				5123C78C231E2A6B00D39C24 /* CartaViewController.swift */,
+				51F4ADE72317C68900B4C8CE /* Carta.storyboard */,
+			);
+			path = TeamCarta;
+			sourceTree = "<group>";
+		};
+		6004C9253F144659FE365F43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BE61DB11E74AE0EDF127B1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40C8A33FE7190987CC87815B /* Pods-CounselingMaster.debug.xcconfig */,
+				191B6FBEAC8A11F8FBF905F9 /* Pods-CounselingMaster.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5109ADE023127D610050F6A2 /* Build configuration list for PBXNativeTarget "CounselingMaster" */;
 			buildPhases = (
+				2F2BD7B6917A6DD6CBF558C0 /* [CP] Check Pods Manifest.lock */,
 				5109ADCA23127D600050F6A2 /* Sources */,
 				5109ADCB23127D600050F6A2 /* Frameworks */,
 				5109ADCC23127D600050F6A2 /* Resources */,
+				49EE151F7000298169723527 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,21 +269,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5109AE102316363C0050F6A2 /* Interview.storyboard in Resources */,
+				5109ADE423127DCF0050F6A2 /* SignIn.storyboard in Resources */,
+				5123C7722319080600D39C24 /* picturePlaceholder100.png in Resources */,
+				5123C7742319080A00D39C24 /* picturePlaceholder50.png in Resources */,
+				5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */,
+				51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */,
+				51F4ADE82317C68900B4C8CE /* Carta.storyboard in Resources */,
 				5109ADDC23127D610050F6A2 /* LaunchScreen.storyboard in Resources */,
 				5109ADD923127D610050F6A2 /* Assets.xcassets in Resources */,
 				5109ADD723127D600050F6A2 /* Main.storyboard in Resources */,
+				51F4ADE32317BAAC00B4C8CE /* Parts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F2BD7B6917A6DD6CBF558C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CounselingMaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49EE151F7000298169723527 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CounselingMaster/Pods-CounselingMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CounselingMaster/Pods-CounselingMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CounselingMaster/Pods-CounselingMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5109ADCA23127D600050F6A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5109ADD423127D600050F6A2 /* ViewController.swift in Sources */,
+				5123C784231A403700D39C24 /* OtherRequestViewController.swift in Sources */,
+				5109AE0C2313B6610050F6A2 /* clinicViewController.swift in Sources */,
+				5123C7512317F30E00D39C24 /* ProfileViewController.swift in Sources */,
 				5109ADD223127D600050F6A2 /* AppDelegate.swift in Sources */,
+				5123C780231A3FF500D39C24 /* SelectSurgeryViewController.swift in Sources */,
+				5123C77E231A3FDC00D39C24 /* SelectPartsViewController.swift in Sources */,
+				5123C77A231936B300D39C24 /* PartsRequestViewController.swift in Sources */,
+				5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */,
+				5123C782231A401A00D39C24 /* DetailPositiveRequestViewController.swift in Sources */,
+				5109ADE8231280F90050F6A2 /* SignUpViewController.swift in Sources */,
+				5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */,
+				5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */,
+				5109ADE6231280EB0050F6A2 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +488,7 @@
 		};
 		5109ADE123127D610050F6A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C8A33FE7190987CC87815B /* Pods-CounselingMaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +507,7 @@
 		};
 		5109ADE223127D610050F6A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 191B6FBEAC8A11F8FBF905F9 /* Pods-CounselingMaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
