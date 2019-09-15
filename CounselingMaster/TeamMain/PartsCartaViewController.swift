@@ -60,6 +60,11 @@ class PartsCartaViewController: UIViewController {
         loadDate()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectMainCartaPartsRequestImageVC = segue.destination as! SelectMainCartaPartsRequestImageViewController
+        selectMainCartaPartsRequestImageVC.selectedObject = self.selectedObject
+    }
+    
     @IBAction func trash(_ sender: Any) {
         let alert = UIAlertController(title: "削除", message: "このカルテを削除しますか？", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -104,6 +109,8 @@ class PartsCartaViewController: UIViewController {
         detailPositiveRequestTextView.isEditable = true
         detailNegativeRequestTextView.isEditable = true
         otherRequestTextView.isEditable = true
+        
+        
     }
     
     

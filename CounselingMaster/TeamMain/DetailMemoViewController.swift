@@ -10,7 +10,7 @@ import UIKit
 import NCMB
 
 class DetailMemoViewController: UIViewController {
-    
+
     
     
     override func viewDidLoad() {

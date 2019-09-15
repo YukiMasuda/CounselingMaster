@@ -30,7 +30,7 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         print("イメージが一枚のみの")
         detailNegativeImage1 = image
-        secondImageView?.image = image.scale(byFactor: 0.4)
+        firstImageView?.image = image.scale(byFactor: 0.4)
     }
     
     /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {

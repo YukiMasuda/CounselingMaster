@@ -33,6 +33,7 @@
 		51EF933F232DDA62000E780C /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF933E232DDA62000E780C /* AddMemoViewController.swift */; };
 		51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */; };
 		51EF9343232E357C000E780C /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9342232E357C000E780C /* GlobalVariable.swift */; };
+		51EF9345232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9344232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift */; };
 		51F4ADE32317BAAC00B4C8CE /* Parts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */; };
 		C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		51EF933E232DDA62000E780C /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewController.swift; sourceTree = "<group>"; };
 		51EF9342232E357C000E780C /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalVariable.swift; path = TeamParts/GlobalVariable.swift; sourceTree = "<group>"; };
+		51EF9344232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMainCartaPartsRequestImageViewController.swift; sourceTree = "<group>"; };
 		51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,10 +139,11 @@
 			children = (
 				5109AE092313B6540050F6A2 /* partsViewController.swift */,
 				5109AE0B2313B6610050F6A2 /* clinicViewController.swift */,
+				51EF9344232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift */,
 				51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */,
-				51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */,
-				51EF933E232DDA62000E780C /* AddMemoViewController.swift */,
 				5109ADD523127D600050F6A2 /* Main.storyboard */,
+				51EF933E232DDA62000E780C /* AddMemoViewController.swift */,
+				51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */,
 			);
 			path = TeamMain;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				5109ADE8231280F90050F6A2 /* SignUpViewController.swift in Sources */,
 				5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */,
 				5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */,
+				51EF9345232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift in Sources */,
 				5109ADE6231280EB0050F6A2 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

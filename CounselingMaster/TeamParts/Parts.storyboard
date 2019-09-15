@@ -716,7 +716,7 @@
                         <viewLayoutGuide key="safeArea" id="hY7-E8-xdu"/>
                     </view>
                     <navigationItem key="navigationItem" title="カルテ" id="fYg-FE-hHt">
-                        <barButtonItem key="leftBarButtonItem" title="ホームへ" id="lyH-kl-z5K">
+                        <barButtonItem key="leftBarButtonItem" title="保存" id="lyH-kl-z5K">
                             <connections>
                                 <action selector="backToMainTableView:" destination="YbJ-No-m4f" id="QdC-DN-pSd"/>
                             </connections>

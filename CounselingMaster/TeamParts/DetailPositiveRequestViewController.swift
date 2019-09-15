@@ -46,7 +46,7 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
                 self.firstImageView.image = images[0]
             }else{
                 detailPositiveImage1 = images[0].scale(byFactor: 0.4)
-                detailPositiveImage1 = images[1].scale(byFactor: 0.4)
+                detailPositiveImage2 = images[1].scale(byFactor: 0.4)
                 self.firstImageView.image = images[0]
                 self.secondImageView.image = images[1]
             }

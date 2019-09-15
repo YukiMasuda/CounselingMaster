@@ -86,14 +86,6 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         print("無意味")
     }
     
-    //次のページに渡す
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectSurgeryVC = segue.destination as! SelectSurgeryViewController
-        selectSurgeryVC.selectedPartsName = self.selectedPartsName
-        selectSurgeryVC.partsRequestImage = self.resizedImage
-        selectSurgeryVC.partsRequestText = requestTextView.text
-    }*/
-    
     //画像の選択
     @IBAction func selectFirstImage(_ sender: Any) {
         let fusuma = FusumaViewController()

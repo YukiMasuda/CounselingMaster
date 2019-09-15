@@ -15,14 +15,9 @@ class clinicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
     }
     
-
     @IBAction func showMenu(_ sender: Any) {
-        
         let alert = UIAlertController(title: "メニュー", message: "メニューを選択してください。", preferredStyle: .actionSheet)
         let signOutAction = UIAlertAction(title: "ログアウト", style: .default) { (action) in
             NCMBUser.logOutInBackground({ (error) in
@@ -30,7 +25,6 @@ class clinicViewController: UIViewController {
                     print("ログアウトエラーです。")
                     print(error)
                 }else{
-                    
                     //ログアウト成功
                     let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main
                     )
