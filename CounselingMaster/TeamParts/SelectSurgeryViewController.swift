@@ -11,62 +11,28 @@ import NCMB
 
 class SelectSurgeryViewController: UIViewController {
     
-    var selectedPartsName: String!
-    var partsRequestText: String!
-    var partsRequestImage: UIImage?
-    
     @IBOutlet weak var requestTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         requestTextView.text = ""
- 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print(partsRequestImage)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
 
-            
-        let detailPositiveRequestVC = segue.destination as! DetailPositiveRequestViewController
-        
-        detailPositiveRequestVC.selectedPartsName = self.selectedPartsName
-        detailPositiveRequestVC.partsRequestText = self.partsRequestText
-        detailPositiveRequestVC.partsRequestImage = self.partsRequestImage
-        detailPositiveRequestVC.selectSurgeryText = requestTextView.text
-
-    }
-    
-    
-    
+    //次のページへ
     @IBAction func saveInfo(_ sender: Any) {
-
-                self.performSegue(withIdentifier: "goToNext", sender: nil)
+        selectSurgeryText = requestTextView.text
+        self.performSegue(withIdentifier: "goToNext", sender: nil)
     }
     
-    
-    
+    //キーボードを下げる
     @IBAction func done(_ sender: Any) {
-        
         requestTextView.resignFirstResponder()
-        
     }
     
-    @IBAction func backToBeforepage(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
+    //カルテの破棄
     @IBAction func trash(_ sender: Any) {
-        
         let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            
             //Mainへ遷移するコード
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
@@ -81,7 +47,4 @@ class SelectSurgeryViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-        
-
-    
 }

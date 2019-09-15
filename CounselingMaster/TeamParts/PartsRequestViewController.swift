@@ -15,10 +15,6 @@ import Fusuma
 class PartsRequestViewController :
 UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
 
-    var selectedPartsName: String!
-    var selectedImages: [UIImage]!
-    var resizedImage: UIImage!
-
     @IBOutlet weak var titleText: UITextView!
     @IBOutlet weak var requestTextView: UITextView!
     @IBOutlet weak var firstImageView: UIImageView!
@@ -27,14 +23,14 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         requestTextView.text = ""
-        titleText.text = selectedPartsName + "をどんな印象に変えたいですか？"
+        titleText.text = selectPartsName + "をどんな印象に変えたいですか？"
     }
     
     //一枚画像が選択された時
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
-        print("イメージが一枚飲みの")
+        print("イメージが一枚のみの")
         partsRequestImage1 = image
-        secondImageView?.image = image
+        secondImageView?.image = image.scale(byFactor: 0.4)
     }
     
     /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
@@ -45,16 +41,14 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     //複数画像が選択された時
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode, metaData: [ImageMetadata]) {
         print("選択された写真の数は\(images.count)枚です")
-
         var count: Double = 0
-        
             DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
                 if images.count == 1{
-                    partsRequestImage1 = images[0]
+                    partsRequestImage1 = images[0].scale(byFactor: 0.4)
                    self.firstImageView.image = images[0]
                 }else{
-                    partsRequestImage1 = images[0]
-                    partsRequestImage2 = images[1]
+                    partsRequestImage1 = images[0].scale(byFactor: 0.4)
+                    partsRequestImage2 = images[1].scale(byFactor: 0.4)
                     self.firstImageView.image = images[0]
                     self.secondImageView.image = images[1]
                 }
@@ -102,8 +96,6 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     
     //画像の選択
     @IBAction func selectFirstImage(_ sender: Any) {
-        firstImageView?.image = nil
-        secondImageView?.image = nil
         let fusuma = FusumaViewController()
         fusuma.delegate = self
         fusuma.cropHeightRatio = 1.0
@@ -116,6 +108,7 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     
     //次のページへ
     @IBAction func saveInfo(_ sender: Any) {
+        partsRequestText = requestTextView.text
         self.performSegue(withIdentifier: "goToNext", sender: nil)
     }
     
@@ -124,6 +117,7 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         requestTextView.resignFirstResponder()
     }
     
+    //カルテを破棄する
     @IBAction func trash(_ sender: Any) {
         let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in

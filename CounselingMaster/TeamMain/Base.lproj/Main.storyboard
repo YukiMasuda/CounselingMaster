@@ -299,12 +299,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="PgI-FM-ql2">
-                                                <rect key="frame" x="217" y="536" width="150" height="150"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参照画像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4e-53-0DD">
-                                                <rect key="frame" x="94" y="596" width="107" height="30"/>
+                                                <rect key="frame" x="34" y="556" width="107" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -339,22 +335,22 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZO-i8-6C5">
-                                                <rect key="frame" x="214" y="1521" width="150" height="150"/>
+                                                <rect key="frame" x="36" y="1559" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参照画像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwQ-bQ-9cA">
-                                                <rect key="frame" x="91" y="1581" width="107" height="30"/>
+                                                <rect key="frame" x="36" y="1521" width="107" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Gq-DE-339">
-                                                <rect key="frame" x="214" y="2081" width="150" height="150"/>
+                                                <rect key="frame" x="36" y="2164" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参照画像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPt-yc-xgB">
-                                                <rect key="frame" x="91" y="2141" width="107" height="30"/>
+                                                <rect key="frame" x="36" y="2081" width="107" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -388,11 +384,22 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgn-gc-kVy">
-                                                <rect key="frame" x="269" y="724" width="86" height="72"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="PgI-FM-ql2">
+                                                <rect key="frame" x="34" y="611" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIl-c8-irP">
+                                                <rect key="frame" x="217" y="611" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="EyZ-BO-C8d">
+                                                <rect key="frame" x="205" y="1559" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="CJv-3y-K6Y">
+                                                <rect key="frame" x="205" y="2164" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -424,13 +431,16 @@
                     <size key="freeformSize" width="375" height="3000"/>
                     <connections>
                         <outlet property="contentView" destination="EfR-Cy-0zU" id="59N-Ls-7k5"/>
-                        <outlet property="detailNegativeRequestImageView" destination="5Gq-DE-339" id="WBg-S8-8zQ"/>
+                        <outlet property="detailNegativeRequestImage1View" destination="5Gq-DE-339" id="HnO-k3-Wgs"/>
+                        <outlet property="detailNegativeRequestImage2View" destination="CJv-3y-K6Y" id="ECb-FZ-jh5"/>
                         <outlet property="detailNegativeRequestTextView" destination="UGx-tu-e8z" id="RLL-Bh-s2Y"/>
-                        <outlet property="detailPositiveRequestImageView" destination="JZO-i8-6C5" id="uNU-hu-YOY"/>
+                        <outlet property="detailPositiveRequestImage1View" destination="JZO-i8-6C5" id="Hq6-eB-23w"/>
+                        <outlet property="detailPositiveRequestImage2View" destination="EyZ-BO-C8d" id="FtM-f3-X0V"/>
                         <outlet property="detailPositiveRequestTextView" destination="e9X-Bx-cHG" id="3PP-b3-cWx"/>
                         <outlet property="editButton" destination="Lxo-vf-ufw" id="JPg-Wj-sXd"/>
                         <outlet property="otherRequestTextView" destination="7B0-Ei-3a2" id="H7b-3a-V0h"/>
-                        <outlet property="partsRequestImageView" destination="PgI-FM-ql2" id="5H7-bz-oMH"/>
+                        <outlet property="partsRequestImage1View" destination="PgI-FM-ql2" id="eLn-IP-DU6"/>
+                        <outlet property="partsRequestImage2View" destination="LIl-c8-irP" id="yIg-DV-f5w"/>
                         <outlet property="partsRequestTextView" destination="zXg-1J-v4f" id="Okh-fx-poL"/>
                         <outlet property="scrollView" destination="92e-Dz-hVW" id="mwl-dc-15E"/>
                         <outlet property="selectPartsLabel" destination="T7a-6m-W5I" id="ckr-wA-0ME"/>

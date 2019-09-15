@@ -227,18 +227,11 @@
                         <viewLayoutGuide key="safeArea" id="oLS-l2-1uJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="6" id="YTh-sH-TSL">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" id="V8f-2r-rA7">
-                                <connections>
-                                    <action selector="backToBeforePage:" destination="PK1-IU-sa8" id="Wkx-AA-oDn"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="F0K-W8-hSS">
-                                <connections>
-                                    <action selector="trash:" destination="PK1-IU-sa8" id="uov-b5-Kg7"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="F0K-W8-hSS">
+                            <connections>
+                                <action selector="trash:" destination="PK1-IU-sa8" id="uov-b5-Kg7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="シート作成" id="FhI-tk-LAT">
                             <connections>
                                 <action selector="makeCarta:" destination="PK1-IU-sa8" id="Kwd-3D-PWH"/>
@@ -373,14 +366,11 @@
                         <viewLayoutGuide key="safeArea" id="a0W-R3-PLX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="deE-4L-q2u">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" id="5sm-S0-JPR"/>
-                            <barButtonItem systemItem="trash" id="mWP-zw-9fb">
-                                <connections>
-                                    <action selector="trash:" destination="5aQ-xI-hcO" id="jjZ-tv-k8A"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="mWP-zw-9fb">
+                            <connections>
+                                <action selector="trash:" destination="5aQ-xI-hcO" id="jjZ-tv-k8A"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="NjI-GM-X17">
                             <connections>
                                 <action selector="saveInfo:" destination="5aQ-xI-hcO" id="hyk-c7-a2G"/>
@@ -461,18 +451,11 @@
                         <viewLayoutGuide key="safeArea" id="e4m-ny-jRX"/>
                     </view>
                     <navigationItem key="navigationItem" title="4" id="kL0-bW-FSb">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" id="HpW-sG-IHA">
-                                <connections>
-                                    <action selector="backToBeforepage:" destination="vjD-2J-dzg" id="Rg3-nF-H44"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="cl5-wH-BEA">
-                                <connections>
-                                    <action selector="trash:" destination="vjD-2J-dzg" id="hZr-Gv-0OO"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="cl5-wH-BEA">
+                            <connections>
+                                <action selector="trash:" destination="vjD-2J-dzg" id="hZr-Gv-0OO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="次へ" id="jXE-Wh-KbL">
                             <connections>
                                 <action selector="saveInfo:" destination="vjD-2J-dzg" id="Dh2-zY-TTD"/>
@@ -482,7 +465,7 @@
                     <connections>
                         <outlet property="firstImageView" destination="c0v-j4-acp" id="fdQ-6k-Fil"/>
                         <outlet property="requestTextView" destination="cn1-xC-bPB" id="PHy-E6-FZY"/>
-                        <outlet property="secondImageView" destination="qFV-o4-Qmc" id="gaU-3G-owR"/>
+                        <outlet property="secondImageView" destination="qFV-o4-Qmc" id="Mbd-RK-ACu"/>
                         <segue destination="V2G-To-rLp" kind="show" identifier="goToNext" id="Hzt-HS-GOw"/>
                     </connections>
                 </viewController>
@@ -555,18 +538,11 @@
                         <viewLayoutGuide key="safeArea" id="CbE-9X-8pd"/>
                     </view>
                     <navigationItem key="navigationItem" title="5" id="3cJ-Gs-hNP">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" id="GR1-n9-6Mn">
-                                <connections>
-                                    <action selector="backToBeforePage:" destination="V2G-To-rLp" id="9Tj-Fy-Uyv"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="YRc-Vj-tch">
-                                <connections>
-                                    <action selector="trash:" destination="V2G-To-rLp" id="vJD-lR-TWD"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="YRc-Vj-tch">
+                            <connections>
+                                <action selector="trash:" destination="V2G-To-rLp" id="vJD-lR-TWD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="次へ" id="xfN-Mu-djc">
                             <connections>
                                 <action selector="goToNext:" destination="V2G-To-rLp" id="84G-lj-ZvO"/>
@@ -576,6 +552,7 @@
                     <connections>
                         <outlet property="firstImageView" destination="jNc-7b-DAS" id="xCW-5c-bBy"/>
                         <outlet property="requestTextView" destination="gzP-Pk-XXp" id="4hp-qk-I1J"/>
+                        <outlet property="secondImageView" destination="BPk-jK-4KV" id="tXQ-op-Psc"/>
                         <segue destination="PK1-IU-sa8" kind="show" identifier="goToNext" id="EgY-lD-3je"/>
                     </connections>
                 </viewController>
@@ -771,7 +748,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FO6-hA-8df" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8180" y="97.536945812807886"/>
+            <point key="canvasLocation" x="7022" y="98"/>
         </scene>
     </scenes>
     <resources>
