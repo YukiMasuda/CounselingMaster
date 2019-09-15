@@ -9,204 +9,134 @@
 import UIKit
 import NCMB
 import NYXImagesKit
+import Fusuma
 
 
 class PartsRequestViewController :
-UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    
-    
-    var selectedImage: UIImage!
-    
+UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
+
+    var selectedPartsName: String!
+    var selectedImages: [UIImage]!
+    var resizedImage: UIImage!
+
+    @IBOutlet weak var titleText: UITextView!
     @IBOutlet weak var requestTextView: UITextView!
-    
-    
     @IBOutlet weak var firstImageView: UIImageView!
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var secondImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        firstImageView.image = UIImage(named: "picturePlaceholder100.png")
         requestTextView.text = ""
+        titleText.text = selectedPartsName + "をどんな印象に変えたいですか？"
+    }
     
+    //一枚画像が選択された時
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        print("イメージが一枚飲みの")
+        partsRequestImage1 = image
+        secondImageView?.image = image
+    }
+    
+    /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
+        print("EE")
         
+    }*/
+    
+    //複数画像が選択された時
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode, metaData: [ImageMetadata]) {
+        print("選択された写真の数は\(images.count)枚です")
 
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var count: Double = 0
         
-        if segue.identifier == "goToNext"{
-            
-            let selectSurgeryVC = segue.destination as! SelectSurgeryViewController
-            
-               selectSurgeryVC.partsRequestText = requestTextView.text
-            
-        }
-        
-    }
-    
-    
-    
-    
-    
-    //写真撮り終えたらfivに写真を格納する
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-     
-        let resizedImage = selectedImage.scale(byFactor: 0.4)
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-        let data = resizedImage?.pngData()
-        let file = NCMBFile.file(withName:  NCMBUser.current()!.objectId + "partsRequest", data: data) as! NCMBFile
-        file.saveInBackground({ (error) in
-            if error != nil{
-                print(error)
-            }else{
-                self.firstImageView.image = selectedImage
+            DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
+                if images.count == 1{
+                    partsRequestImage1 = images[0]
+                   self.firstImageView.image = images[0]
+                }else{
+                    partsRequestImage1 = images[0]
+                    partsRequestImage2 = images[1]
+                    self.firstImageView.image = images[0]
+                    self.secondImageView.image = images[1]
+                }
+                self.fusumaClosed()
             }
-        }) { (progress) in
-            print(progress)
-        }
+            count += 1
     }
     
+    //カメラが使用できなかった時
+    func fusumaCameraRollUnauthorized() {
+        let alert = UIAlertController(title: "カメラが使えません",
+                                      message: "この機種ではカメラが使えません",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "設定へ", style: .default) { (action) -> Void in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.openURL(url)
+            }
+        })
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel) { (action) -> Void in
+        })
+        
+        guard let vc = UIApplication.shared.delegate?.window??.rootViewController, let presented = vc.presentedViewController else {
+            return
+        }
+        presented.present(alert, animated: true, completion: nil)
+    }
     
+    //無意味
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
+        print("無意味")
+    }
     
+    //ビデオがを選択された時
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+        print("無意味")
+    }
     
-    
-    
-    
-    
-    
-    
+    //次のページに渡す
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectSurgeryVC = segue.destination as! SelectSurgeryViewController
+        selectSurgeryVC.selectedPartsName = self.selectedPartsName
+        selectSurgeryVC.partsRequestImage = self.resizedImage
+        selectSurgeryVC.partsRequestText = requestTextView.text
+    }*/
     
     //画像の選択
     @IBAction func selectFirstImage(_ sender: Any) {
-        
-        let actioncontroller = UIAlertController(title: "画像選択", message: "選択してください", preferredStyle: .actionSheet)
-        
-        let cameraAction = UIAlertAction(title: "カメラ", style: .default) { (action) in
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) == true{
-                
-                //カメラ起動のコード
-                let picker = UIImagePickerController()
-                picker.sourceType = .camera
-                picker.delegate = self
-                self.present(picker, animated: true, completion: nil)
-                
-            }else{
-               
-                print("この機種ではカメラは使えません。")
-
-            }
-        }
-        
-        
-        let albumAction = UIAlertAction(title: "アルバム", style: .default) { (action) in
-           
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-                
-                //アルバム起動のコード
-                let picker = UIImagePickerController()
-                picker.sourceType = .photoLibrary
-                picker.delegate = self
-                self.present(picker, animated: true, completion: nil)
-                
-            }else{
-                
-                print("この機種ではアルバムは使えません。")
-            }
-        }
-        
-        
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        actioncontroller.addAction(cameraAction)
-        actioncontroller.addAction(albumAction)
-        actioncontroller.addAction(cancelAction)
-        self.present(actioncontroller, animated: true, completion: nil)
-        
+        firstImageView?.image = nil
+        secondImageView?.image = nil
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        fusuma.cropHeightRatio = 1.0
+        fusuma.allowMultipleSelection = true
+        fusuma.availableModes = [.library, .camera]
+        fusuma.photoSelectionLimit = 2
+        fusumaSavesImage = true
+        present(fusuma, animated: true, completion: nil)
     }
     
-    
-
-    
-    
+    //次のページへ
     @IBAction func saveInfo(_ sender: Any) {
-        
-        
-        
-        
-        //rtvの文章のアップロード
-        let object = NCMBObject(className: "PartsRequest")
-        object?.setObject(requestTextView.text, forKey: NCMBUser.current()!.objectId)
-        object?.saveInBackground({ (error) in
-            if error != nil{
-                print("requesttextViewの保存失敗")
-                print(error)
-            }else{
-                self.requestTextView.resignFirstResponder()
-            }
-        })
-        
         self.performSegue(withIdentifier: "goToNext", sender: nil)
-        
     }
-
     
-    
+    //キーボードを下げる
     @IBAction func endEditingTextView(_ sender: Any) {
-
         requestTextView.resignFirstResponder()
-        
     }
     
     @IBAction func trash(_ sender: Any) {
-        
         let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            
-            let object1 = NCMBObject(className: "PartsRequest")
-            object1?.deleteInBackground({ (error) in
-                if error != nil{
-                    print(error)
-                }else{
-                    
-                    //Mainへ遷移するコード
-                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
-                    UIApplication.shared.keyWindow?.rootViewController = rootViewController
-                    
-                }
-            })
-            
+            //Mainへ遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
+            UIApplication.shared.keyWindow?.rootViewController = rootViewController
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             alert.dismiss(animated: true, completion: nil)
         }
-
-        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
-    
-    
-    
-    
 }

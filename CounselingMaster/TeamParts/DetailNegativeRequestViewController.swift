@@ -15,10 +15,15 @@ class DetailNegativeRequestViewController :
 UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
+    var selectedPartsName: String!
+    var partsRequestText: String!
+    var partsRequestImage: UIImage?
+    var selectSurgeryText: String!
+    var detailPositiveText: String!
+    var detailPositiveImage: UIImage?
     
-    var partsRequestText: String?
-    var selectSurgeryText: String?
-    var detailPositiveText: String?
+    
+    var resizedImage: UIImage?
     
     @IBOutlet weak var requestTextView: UITextView!
     
@@ -52,13 +57,14 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
             let otherRequestVC = segue.destination as! OtherRequestViewController
             
             otherRequestVC.partsRequestText = self.partsRequestText
-            
+            otherRequestVC.partsRequestImage = self.partsRequestImage
             otherRequestVC.selectSurgeryText = self.selectSurgeryText
             
             otherRequestVC.detailPositiveText = self.detailPositiveText
-            
+            otherRequestVC.detailPositiveImage = self.detailPositiveImage
             otherRequestVC.detailNegativeText = self.requestTextView.text
-            
+            otherRequestVC.detailNegativeImage = self.resizedImage
+            otherRequestVC.selectedPartsName = self.selectedPartsName
         }
         
     }
@@ -78,21 +84,12 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        let resizedImage = selectedImage.scale(byFactor: 0.4)
+        self.resizedImage = selectedImage.scale(byFactor: 0.4)
         
         picker.dismiss(animated: true, completion: nil)
         
-        let data = resizedImage?.pngData()
-        let file = NCMBFile.file(withName: NCMBUser.current()!.objectId + "detailNegativeRequest", data: data) as! NCMBFile
-        file.saveInBackground({ (error) in
-            if error != nil{
-                print(error)
-            }else{
-                self.firstImageView.image = selectedImage
-            }
-        }) { (progress) in
-            print(progress)
-        }
+        self.firstImageView.image = self.resizedImage
+
         
         
     }
@@ -164,20 +161,13 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     
     @IBAction func goToNext(_ sender: Any) {
         
-        //rtvの文章のアップロード
-        let object = NCMBObject(className: "DetailNegativeRequest")
-        object?.setObject(requestTextView.text, forKey: NCMBUser.current()!.objectId)
-        object?.saveInBackground({ (error) in
-            if error != nil{
-                print(error)
-            }else{
-                self.requestTextView.resignFirstResponder()
-            }
-        })
-        
         self.performSegue(withIdentifier: "goToNext", sender: nil)
+        
     }
     
+    @IBAction func backToBeforePage(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     @IBAction func endEditingTextView(_ sender: Any) {
@@ -187,6 +177,23 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     }
     
     @IBAction func trash(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            //Mainへ遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
+            UIApplication.shared.keyWindow?.rootViewController = rootViewController
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     

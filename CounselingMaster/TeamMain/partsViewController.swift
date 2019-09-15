@@ -15,8 +15,8 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var memoTableView: UITableView!
     
+    var object: [NCMBObject] = []
 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +25,74 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         memoTableView.tableFooterView = UIView()
         
-        
-        
-        
 
         
-        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        loadTimeline()
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return object.count
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        
+        cell.textLabel?.text = object[indexPath.row].object(forKey: "cartaTitle") as? String
+        
         return cell
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "toCarta", sender: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCarta"{
+            let selectedIndex = memoTableView.indexPathForSelectedRow
+            let partsCarteVC = segue.destination as! PartsCartaViewController
+            partsCarteVC.selectedObject = object[selectedIndex!.row]
+        }
+    }
+    
+    func loadTimeline(){
+        
+        let query = NCMBQuery(className: "Parts")
+        
+        //降順に
+        query?.order(byDescending: "createDate")
+        
+        query?.whereKey("userId", equalTo: NCMBUser.current()?.objectId)
+        query?.findObjectsInBackground({ (result, error) in
+            if error != nil{
+                print(error)
+            }else{
+                self.object = result as! [NCMBObject]
+                self.memoTableView.reloadData()
+            }
+        })
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func showMenu(_ sender: Any) {
         
@@ -100,6 +151,15 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     @IBAction func goToPartsCarta(_ sender: Any) {

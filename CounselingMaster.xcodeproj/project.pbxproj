@@ -29,8 +29,11 @@
 		5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */; };
 		5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C78C231E2A6B00D39C24 /* CartaViewController.swift */; };
 		51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D18CE72326225900FE18AA /* ClinicCarta.storyboard */; };
+		51D18D112327B2BD00FE18AA /* PartsCartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */; };
+		51EF933F232DDA62000E780C /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF933E232DDA62000E780C /* AddMemoViewController.swift */; };
+		51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */; };
+		51EF9343232E357C000E780C /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9342232E357C000E780C /* GlobalVariable.swift */; };
 		51F4ADE32317BAAC00B4C8CE /* Parts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */; };
-		51F4ADE82317C68900B4C8CE /* Carta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE72317C68900B4C8CE /* Carta.storyboard */; };
 		C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +65,11 @@
 		5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNegativeRequestViewController.swift; sourceTree = "<group>"; };
 		5123C78C231E2A6B00D39C24 /* CartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaViewController.swift; sourceTree = "<group>"; };
 		51D18CE72326225900FE18AA /* ClinicCarta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClinicCarta.storyboard; sourceTree = "<group>"; };
+		51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCartaViewController.swift; sourceTree = "<group>"; };
+		51EF933E232DDA62000E780C /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewController.swift; sourceTree = "<group>"; };
+		51EF9342232E357C000E780C /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalVariable.swift; path = TeamParts/GlobalVariable.swift; sourceTree = "<group>"; };
 		51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parts.storyboard; sourceTree = "<group>"; };
-		51F4ADE72317C68900B4C8CE /* Carta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carta.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		5109ADD023127D600050F6A2 /* CounselingMaster */ = {
 			isa = PBXGroup;
 			children = (
+				51EF9342232E357C000E780C /* GlobalVariable.swift */,
 				5123C74F2317F2F000D39C24 /* TeamProfile */,
 				5123C770231907F400D39C24 /* Images */,
 				5109ADD123127D600050F6A2 /* AppDelegate.swift */,
@@ -106,7 +113,6 @@
 				5109AE51231681FF0050F6A2 /* TeamMain */,
 				51F4ADDF2317B94300B4C8CE /* TeamParts */,
 				51F4ADE12317B97600B4C8CE /* TeamClinic */,
-				51F4ADE62317C66500B4C8CE /* TeamCarta */,
 				51D18CE9232624CD00FE18AA /* TeamClinicCarta */,
 				5109ADD823127D610050F6A2 /* Assets.xcassets */,
 				5109ADDA23127D610050F6A2 /* LaunchScreen.storyboard */,
@@ -131,6 +137,9 @@
 			children = (
 				5109AE092313B6540050F6A2 /* partsViewController.swift */,
 				5109AE0B2313B6610050F6A2 /* clinicViewController.swift */,
+				51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */,
+				51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */,
+				51EF933E232DDA62000E780C /* AddMemoViewController.swift */,
 				5109ADD523127D600050F6A2 /* Main.storyboard */,
 			);
 			path = TeamMain;
@@ -172,6 +181,7 @@
 				5123C781231A401A00D39C24 /* DetailPositiveRequestViewController.swift */,
 				5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */,
 				5123C783231A403700D39C24 /* OtherRequestViewController.swift */,
+				5123C78C231E2A6B00D39C24 /* CartaViewController.swift */,
 			);
 			path = TeamParts;
 			sourceTree = "<group>";
@@ -181,15 +191,6 @@
 			children = (
 			);
 			path = TeamClinic;
-			sourceTree = "<group>";
-		};
-		51F4ADE62317C66500B4C8CE /* TeamCarta */ = {
-			isa = PBXGroup;
-			children = (
-				5123C78C231E2A6B00D39C24 /* CartaViewController.swift */,
-				51F4ADE72317C68900B4C8CE /* Carta.storyboard */,
-			);
-			path = TeamCarta;
 			sourceTree = "<group>";
 		};
 		6004C9253F144659FE365F43 /* Frameworks */ = {
@@ -275,7 +276,6 @@
 				5123C7742319080A00D39C24 /* picturePlaceholder50.png in Resources */,
 				5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */,
 				51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */,
-				51F4ADE82317C68900B4C8CE /* Carta.storyboard in Resources */,
 				5109ADDC23127D610050F6A2 /* LaunchScreen.storyboard in Resources */,
 				5109ADD923127D610050F6A2 /* Assets.xcassets in Resources */,
 				5109ADD723127D600050F6A2 /* Main.storyboard in Resources */,
@@ -338,9 +338,13 @@
 				5109ADD223127D600050F6A2 /* AppDelegate.swift in Sources */,
 				5123C780231A3FF500D39C24 /* SelectSurgeryViewController.swift in Sources */,
 				5123C77E231A3FDC00D39C24 /* SelectPartsViewController.swift in Sources */,
+				51EF933F232DDA62000E780C /* AddMemoViewController.swift in Sources */,
+				51EF9343232E357C000E780C /* GlobalVariable.swift in Sources */,
 				5123C77A231936B300D39C24 /* PartsRequestViewController.swift in Sources */,
 				5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */,
+				51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */,
 				5123C782231A401A00D39C24 /* DetailPositiveRequestViewController.swift in Sources */,
+				51D18D112327B2BD00FE18AA /* PartsCartaViewController.swift in Sources */,
 				5109ADE8231280F90050F6A2 /* SignUpViewController.swift in Sources */,
 				5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */,
 				5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */,
