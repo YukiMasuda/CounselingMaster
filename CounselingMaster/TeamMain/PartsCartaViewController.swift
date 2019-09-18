@@ -139,7 +139,7 @@ class PartsCartaViewController: UIViewController {
         var partsRequestImage2File = NCMBFile.file(with: partsRequestImage2Data) as! NCMBFile
         var detailPositiveRequestImage1File = NCMBFile.file(with: detailPositiveRequestImage1Data) as! NCMBFile
         var detailPositiveRequestImage2File = NCMBFile.file(with: detailPositiveRequestImage2Data) as! NCMBFile
-        var detailNegativeRequestImage1File = NCMBFile.file(with: detailNegativeRequestImage1Data) as! NCMBFile
+       var detailNegativeRequestImage1File = NCMBFile.file(with: detailNegativeRequestImage1Data) as! NCMBFile
         var detailNegativeRequestImage2File = NCMBFile.file(with: detailNegativeRequestImage2Data) as! NCMBFile
         partsRequestImage1File.saveInBackground { (error) in
             if error != nil{

@@ -12,7 +12,7 @@ import Kingfisher
 import NYXImagesKit
 import Fusuma
 
-class DetailMemoViewController: UIViewController, UITextViewDelegate, FusumaDelegate {
+class DetailMemoViewController: UIViewController, UITextViewDelegate{
     var selectedObject: NCMBObject!
     var image1: UIImage?
     var image2: UIImage?
@@ -37,78 +37,15 @@ class DetailMemoViewController: UIViewController, UITextViewDelegate, FusumaDele
         secondImageView.kf.setImage(with: URL(string: memoImage2Url), placeholder: UIImage(named: "picturePlaceholder100.png"))
     }
     
-    //一枚画像が選択された時
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
-        print("イメージが一枚のみの")
-        partsRequestImage1 = image
-        secondImageView?.image = image.scale(byFactor: 0.4)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectDetailImageVC = segue.destination as! SelectDetailImageViewController
+        selectDetailImageVC.selectedObject = self.selectedObject
+        selectDetailImageVC.passedImage1 = self.firstImageView.image
+        selectDetailImageVC.passedImage2 = self.secondImageView.image
     }
     
-    /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
-     print("EE")
-     
-     }*/
-    
-    //複数画像が選択された時
-    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode, metaData: [ImageMetadata]) {
-        print("選択された写真の数は\(images.count)枚です")
-        var count: Double = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
-            if images.count == 1{
-                self.image1 = images[0].scale(byFactor: 0.3)
-                self.firstImageView.image = self.image1
-            }else{
-                self.image1 = images[0].scale(byFactor: 0.3)
-                self.image2 = images[1].scale(byFactor: 0.3)
-                self.firstImageView.image = self.image1
-                self.secondImageView.image = self.image2
-            }
-            self.fusumaClosed()
-        }
-        count += 1
-    }
-    
-    //カメラが使用できなかった時
-    func fusumaCameraRollUnauthorized() {
-        let alert = UIAlertController(title: "カメラが使えません",
-                                      message: "この機種ではカメラが使えません",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "設定へ", style: .default) { (action) -> Void in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.openURL(url)
-            }
-        })
-        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel) { (action) -> Void in
-        })
-        
-        guard let vc = UIApplication.shared.delegate?.window??.rootViewController, let presented = vc.presentedViewController else {
-            return
-        }
-        presented.present(alert, animated: true, completion: nil)
-    }
-    
-    //無意味
-    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
-        print("無意味")
-    }
-    
-    //ビデオがを選択された時
-    func fusumaVideoCompleted(withFileURL fileURL: URL) {
-        print("無意味")
-    }
-    
-    @IBAction func selectImage(_ sender: Any) {
-        let fusuma = FusumaViewController()
-        fusuma.delegate = self
-        fusuma.cropHeightRatio = 1.0
-        fusuma.allowMultipleSelection = true
-        fusuma.availableModes = [.library, .camera]
-        fusuma.photoSelectionLimit = 2
-        fusumaSavesImage = true
-        present(fusuma, animated: true, completion: nil)
-    }
     @IBAction func upDate(_ sender: Any) {
-        var memoImage1Data = self.firstImageView.image?.scale(byFactor: 0.3).pngData()
+        /*var memoImage1Data = self.firstImageView.image?.scale(byFactor: 0.3).pngData()
         var memoImage2Data = self.secondImageView.image?.scale(byFactor: 0.3).pngData()
         
         var memoImage1File = NCMBFile.file(with: memoImage1Data) as! NCMBFile
@@ -137,7 +74,16 @@ class DetailMemoViewController: UIViewController, UITextViewDelegate, FusumaDele
                     }
                 })
             }
-        }
+        }*/
+        
+        self.selectedObject?.setObject(self.memoTextView.text, forKey: "memoText")
+        self.selectedObject?.saveInBackground({ (error) in
+            if error != nil{
+                print(error)
+            }else{
+                print("保存成功")
+            }
+        })
         self.navigationController?.popViewController(animated: true)
     }
     

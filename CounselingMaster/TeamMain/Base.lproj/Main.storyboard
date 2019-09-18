@@ -149,11 +149,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovk-Rj-KMr">
-                                <rect key="frame" x="164" y="642" width="46" height="30"/>
+                                <rect key="frame" x="109" y="642" width="150" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="selectImage:" destination="mpY-Le-SkJ" eventType="touchUpInside" id="eaw-xf-qC3"/>
+                                    <segue destination="Qwe-ld-q3N" kind="show" id="Keo-Yg-LpL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -183,6 +183,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXZ-P0-ON5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4260" y="1164.5320197044337"/>
+        </scene>
+        <!--画像の編集-->
+        <scene sceneID="ZJk-Ip-swO">
+            <objects>
+                <viewController id="Qwe-ld-q3N" customClass="SelectDetailImageViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kw-kT-Rpw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-lG-A7t">
+                                <rect key="frame" x="94" y="367" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="画像を変更">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectImage:" destination="Qwe-ld-q3N" eventType="touchUpInside" id="YxF-O9-rFj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-n7-hA2">
+                                <rect key="frame" x="94" y="482" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="画像を削除">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteImage:" destination="Qwe-ld-q3N" eventType="touchUpInside" id="DYT-eV-kCv"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-sg-nUl">
+                                <rect key="frame" x="16" y="143" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="03q-yI-SfH">
+                                <rect key="frame" x="209" y="143" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sEj-YG-FGE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="画像の編集" id="dUY-ke-ME1">
+                        <barButtonItem key="rightBarButtonItem" title="更新" id="hiI-Jb-C0l">
+                            <connections>
+                                <action selector="upDateImage:" destination="Qwe-ld-q3N" id="XYh-oK-Is0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="FirstImageView" destination="xJM-sg-nUl" id="crF-3Y-xNS"/>
+                        <outlet property="firstImageView" destination="xJM-sg-nUl" id="Rpe-BY-GOB"/>
+                        <outlet property="secondImageView" destination="03q-yI-SfH" id="pvE-Ma-isD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Hs-IO-bsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5311" y="1166"/>
         </scene>
         <!--新規メモ-->
         <scene sceneID="8md-av-6jD">
@@ -511,7 +570,7 @@
             </objects>
             <point key="canvasLocation" x="5136.8000000000002" y="-1872.4137931034484"/>
         </scene>
-        <!--Select Main Carta Parts Request Image View Controller-->
+        <!--Title-->
         <scene sceneID="qzd-rX-cQC">
             <objects>
                 <viewController id="G9U-2B-SNr" customClass="SelectMainCartaPartsRequestImageViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -527,7 +586,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectImage:" destination="G9U-2B-SNr" eventType="touchUpInside" id="guE-1T-Vec"/>
+                                    <action selector="selectImage:" destination="G9U-2B-SNr" eventType="touchUpInside" id="5iu-Zv-YCf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-lS-vu5">
@@ -538,7 +597,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteImage:" destination="G9U-2B-SNr" eventType="touchUpInside" id="CaQ-aE-Tw4"/>
+                                    <action selector="deleteImage:" destination="G9U-2B-SNr" eventType="touchUpInside" id="t0I-JH-dbb"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="lVW-hR-ADI">
@@ -553,9 +612,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lYf-5d-F9k"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="tKP-F6-KdD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="6pE-3i-fBx">
+                            <connections>
+                                <action selector="upDateImage:" destination="G9U-2B-SNr" id="CeU-Yd-j9c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="firstImageView" destination="nif-0h-wny" id="bTd-B3-jzR"/>
-                        <outlet property="secondImageView" destination="lVW-hR-ADI" id="YbU-ba-mQd"/>
+                        <outlet property="firstImageView" destination="nif-0h-wny" id="X9i-D5-b8f"/>
+                        <outlet property="secondImageView" destination="lVW-hR-ADI" id="4Hs-yi-Xab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKg-hS-fBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,7 +644,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectImage:" destination="Z1R-2c-jFd" eventType="touchUpInside" id="YNo-WN-c1Q"/>
+                                    <action selector="selectImage:" destination="Z1R-2c-jFd" eventType="touchUpInside" id="jfk-Sw-i8P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c3-jA-POv">
@@ -589,7 +655,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteImage:" destination="Z1R-2c-jFd" eventType="touchUpInside" id="Pap-jM-ypn"/>
+                                    <action selector="deleteImage:" destination="Z1R-2c-jFd" eventType="touchUpInside" id="Dp6-GU-EdR"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-PZ-6oU">
@@ -605,22 +671,23 @@
                         <viewLayoutGuide key="safeArea" id="zlW-R1-35I"/>
                     </view>
                     <navigationItem key="navigationItem" title="画像の編集" id="P2k-3g-jdG">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="PYR-8g-lqi">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="PYR-8g-lqi"/>
+                        <barButtonItem key="rightBarButtonItem" title="更新" id="z3g-vL-HLT">
                             <connections>
-                                <action selector="back:" destination="Z1R-2c-jFd" id="G6O-AU-FGl"/>
+                                <action selector="upDateImage:" destination="Z1R-2c-jFd" id="pHM-5L-lRa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="firstImageView" destination="jlv-PZ-6oU" id="HQy-wx-0Y3"/>
-                        <outlet property="secondImageView" destination="BVY-rk-qiy" id="B5d-5S-xKx"/>
+                        <outlet property="firstImageView" destination="jlv-PZ-6oU" id="74j-P8-z7d"/>
+                        <outlet property="secondImageView" destination="BVY-rk-qiy" id="gxi-0F-sgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aII-OR-2bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7722.3999999999996" y="-1872.4137931034484"/>
         </scene>
-        <!--Select Main Carta Detail Negative Request View Controller-->
+        <!--Title-->
         <scene sceneID="vkr-mv-eJn">
             <objects>
                 <viewController id="8dQ-42-0FQ" customClass="SelectMainCartaDetailNegativeRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -636,7 +703,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectImage:" destination="8dQ-42-0FQ" eventType="touchUpInside" id="zQn-Jr-b4Z"/>
+                                    <action selector="selectImage:" destination="8dQ-42-0FQ" eventType="touchUpInside" id="v6M-CS-7ul"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAc-DE-I8B">
@@ -647,24 +714,33 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteImage:" destination="8dQ-42-0FQ" eventType="touchUpInside" id="HMf-YE-yPO"/>
+                                    <action selector="deleteImage:" destination="8dQ-42-0FQ" eventType="touchUpInside" id="4mP-CW-nYz"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="J8Z-KX-jnU">
-                                <rect key="frame" x="16" y="139" width="150" height="150"/>
+                                <rect key="frame" x="16" y="125" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePlaceholder100.png" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-p1-yJA">
-                                <rect key="frame" x="209" y="139" width="150" height="150"/>
+                                <rect key="frame" x="209" y="125" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X4u-Hf-YHG"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="VUM-TY-tTJ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="6Va-oJ-AFa">
+                            <connections>
+                                <action selector="upDateImage:" destination="8dQ-42-0FQ" id="bTE-7q-x40"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="firstImageView" destination="J8Z-KX-jnU" id="zGg-0t-U6d"/>
-                        <outlet property="secondImageView" destination="ha4-p1-yJA" id="l9h-rI-7lY"/>
+                        <outlet property="firstImageView" destination="J8Z-KX-jnU" id="pne-6u-9VB"/>
+                        <outlet property="secondImageView" destination="ha4-p1-yJA" id="a5y-HY-ocA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfa-qp-o2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
