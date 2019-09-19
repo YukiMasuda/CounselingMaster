@@ -15,12 +15,13 @@ class OtherRequestViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         requestTextView.text = ""
     }
     
     //次のページへ（カルテ作成）
     @IBAction func makeCarta(_ sender: Any) {
-        let alert = UIAlertController(title: "カルテのタイトル", message: "カルテのタイトルを入力してください", preferredStyle: .alert)
+        let alert = UIAlertController(title: "カウンセリングシートのタイトル", message: "カウンセリングシートのタイトルを入力してください", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             let textFields:[UITextField]? =  alert.textFields as [UITextField]?
             if textFields != nil {
@@ -40,11 +41,6 @@ class OtherRequestViewController: UIViewController{
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
-    }
-    
-   //キーボードを隠す
-    @IBAction func done(_ sender: Any) {
-        requestTextView.resignFirstResponder()
     }
     
     //カルテを削除

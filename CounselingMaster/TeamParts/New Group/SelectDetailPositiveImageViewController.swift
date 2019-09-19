@@ -1,37 +1,34 @@
 //
-//  DetailNegativeRequestViewController.swift
+//  SelectDetailPositiveImageViewController.swift
 //  CounselingMaster
 //
-//  Created by 増田悠希 on 2019/08/31.
+//  Created by 増田悠希 on 2019/09/19.
 //  Copyright © 2019 Yuki Masuda. All rights reserved.
 //
 
 import UIKit
-import NCMB
 import NYXImagesKit
 import Fusuma
 
-
-class DetailNegativeRequestViewController :
-UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
+class SelectDetailPositiveImageViewController: UIViewController, FusumaDelegate {
+    var image1: UIImage?
+    var image2: UIImage?
     
-    var resizedImage: UIImage?
-    
-    @IBOutlet weak var requestTextView: UITextView!
     @IBOutlet weak var firstImageView: UIImageView!
     @IBOutlet weak var secondImageView: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        requestTextView.text = ""
+        firstImageView.image = detailPositiveImage1
+        secondImageView.image = detailPositiveImage2
+        
     }
     
     //一枚画像が選択された時
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         print("イメージが一枚のみの")
-        detailNegativeImage1 = image
-        firstImageView?.image = image.scale(byFactor: 0.4)
+        firstImageView.image = image.scale(byFactor: 0.4)
     }
     
     /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
@@ -45,13 +42,10 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         var count: Double = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
             if images.count == 1{
-                detailNegativeImage1 = images[0].scale(byFactor: 0.4)
-                self.firstImageView.image = images[0]
+                self.firstImageView.image = images[0].scale(byFactor: 0.4)
             }else{
-                detailNegativeImage1 = images[0].scale(byFactor: 0.4)
-                detailNegativeImage2 = images[1].scale(byFactor: 0.4)
-                self.firstImageView.image = images[0]
-                self.secondImageView.image = images[1]
+                self.firstImageView.image = images[0].scale(byFactor: 0.4)
+                self.secondImageView.image = images[1].scale(byFactor: 0.4)
             }
             self.fusumaClosed()
         }
@@ -87,16 +81,13 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         print("無意味")
     }
     
-    //次のページに渡す
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     let selectSurgeryVC = segue.destination as! SelectSurgeryViewController
-     selectSurgeryVC.selectedPartsName = self.selectedPartsName
-     selectSurgeryVC.partsRequestImage = self.resizedImage
-     selectSurgeryVC.partsRequestText = requestTextView.text
-     }*/
-    
-    //画像の選択
-    @IBAction func selectFirstImage(_ sender: Any) {
+    @IBAction func upDateImage(_ sender: Any) {
+        detailPositiveImage1 = firstImageView.image
+        detailPositiveImage2 = secondImageView.image
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    @IBAction func selectImage(_ sender: Any) {
         let fusuma = FusumaViewController()
         fusuma.delegate = self
         fusuma.cropHeightRatio = 1.0
@@ -107,26 +98,11 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         present(fusuma, animated: true, completion: nil)
     }
     
-    //次のページへ
-    @IBAction func goToNext(_ sender: Any) {
-        detailNegativeText = requestTextView.text
-        self.performSegue(withIdentifier: "goToNext", sender: nil)
+    @IBAction func deleteImage(_ sender: Any) {
+        firstImageView.image = nil
+        secondImageView.image = nil
+        detailPositiveImage1 = nil
+        detailPositiveImage2 = nil
     }
     
-    //カルテを削除
-    @IBAction func trash(_ sender: Any) {
-        let alert = UIAlertController(title: "カウンセリングシートの破棄", message: "カウンセリングシートを破棄しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            //Mainへ遷移するコード
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
-            UIApplication.shared.keyWindow?.rootViewController = rootViewController
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
 }

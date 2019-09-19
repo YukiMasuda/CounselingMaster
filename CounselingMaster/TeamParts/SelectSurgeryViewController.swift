@@ -15,8 +15,10 @@ class SelectSurgeryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         requestTextView.text = ""
     }
+
 
     //次のページへ
     @IBAction func saveInfo(_ sender: Any) {
@@ -24,14 +26,9 @@ class SelectSurgeryViewController: UIViewController {
         self.performSegue(withIdentifier: "goToNext", sender: nil)
     }
     
-    //キーボードを下げる
-    @IBAction func done(_ sender: Any) {
-        requestTextView.resignFirstResponder()
-    }
-    
     //カルテの破棄
     @IBAction func trash(_ sender: Any) {
-        let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
+        let alert = UIAlertController(title: "カウンセリングシートの破棄", message: "カウンセリングシートを破棄しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             //Mainへ遷移するコード
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

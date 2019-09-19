@@ -37,6 +37,12 @@
 		51EF934C232F79AC000E780C /* SelectMainCartaDetailPositiveRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF934B232F79AC000E780C /* SelectMainCartaDetailPositiveRequestViewController.swift */; };
 		51EF9350232FA50F000E780C /* SelectMainCartaDetailNegativeRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF934F232FA50F000E780C /* SelectMainCartaDetailNegativeRequestViewController.swift */; };
 		51EF93572331FEE5000E780C /* SelectDetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF93562331FEE5000E780C /* SelectDetailImageViewController.swift */; };
+		51EF9359233348BF000E780C /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9358233348BF000E780C /* ForgetPasswordViewController.swift */; };
+		51EF935C233356EE000E780C /* counselingSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 51EF935A233356ED000E780C /* counselingSheet.png */; };
+		51EF935D233356EE000E780C /* memo.png in Resources */ = {isa = PBXBuildFile; fileRef = 51EF935B233356EE000E780C /* memo.png */; };
+		51EF935F23335C22000E780C /* SelectPartsRequestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF935E23335C22000E780C /* SelectPartsRequestImageViewController.swift */; };
+		51EF936123335EBD000E780C /* SelectDetailPositiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF936023335EBD000E780C /* SelectDetailPositiveImageViewController.swift */; };
+		51EF936523335F55000E780C /* SelectDetailNegativeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF936423335F55000E780C /* SelectDetailNegativeImageViewController.swift */; };
 		51F4ADE32317BAAC00B4C8CE /* Parts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */; };
 		C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +83,12 @@
 		51EF934B232F79AC000E780C /* SelectMainCartaDetailPositiveRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMainCartaDetailPositiveRequestViewController.swift; sourceTree = "<group>"; };
 		51EF934F232FA50F000E780C /* SelectMainCartaDetailNegativeRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMainCartaDetailNegativeRequestViewController.swift; sourceTree = "<group>"; };
 		51EF93562331FEE5000E780C /* SelectDetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectDetailImageViewController.swift; path = ../TeamMain/SelectDetailImageViewController.swift; sourceTree = "<group>"; };
+		51EF9358233348BF000E780C /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		51EF935A233356ED000E780C /* counselingSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counselingSheet.png; sourceTree = "<group>"; };
+		51EF935B233356EE000E780C /* memo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memo.png; sourceTree = "<group>"; };
+		51EF935E23335C22000E780C /* SelectPartsRequestImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartsRequestImageViewController.swift; sourceTree = "<group>"; };
+		51EF936023335EBD000E780C /* SelectDetailPositiveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDetailPositiveImageViewController.swift; sourceTree = "<group>"; };
+		51EF936423335F55000E780C /* SelectDetailNegativeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDetailNegativeImageViewController.swift; sourceTree = "<group>"; };
 		51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +148,7 @@
 				5109ADE5231280EB0050F6A2 /* SignInViewController.swift */,
 				5109ADE7231280F90050F6A2 /* SignUpViewController.swift */,
 				5109ADE323127DCF0050F6A2 /* SignIn.storyboard */,
+				51EF9358233348BF000E780C /* ForgetPasswordViewController.swift */,
 			);
 			path = TeamSignIn;
 			sourceTree = "<group>";
@@ -169,6 +182,8 @@
 			children = (
 				5123C7732319080A00D39C24 /* picturePlaceholder50.png */,
 				5123C7712319080600D39C24 /* picturePlaceholder100.png */,
+				51EF935A233356ED000E780C /* counselingSheet.png */,
+				51EF935B233356EE000E780C /* memo.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -192,10 +207,20 @@
 			path = "../New Group";
 			sourceTree = "<group>";
 		};
+		51EF9366233361B2000E780C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				51EF935E23335C22000E780C /* SelectPartsRequestImageViewController.swift */,
+				51EF936023335EBD000E780C /* SelectDetailPositiveImageViewController.swift */,
+				51EF936423335F55000E780C /* SelectDetailNegativeImageViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		51F4ADDF2317B94300B4C8CE /* TeamParts */ = {
 			isa = PBXGroup;
 			children = (
-				51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */,
+				51EF9366233361B2000E780C /* New Group */,
 				5123C77D231A3FDC00D39C24 /* SelectPartsViewController.swift */,
 				5123C779231936B300D39C24 /* PartsRequestViewController.swift */,
 				5123C77F231A3FF500D39C24 /* SelectSurgeryViewController.swift */,
@@ -203,6 +228,7 @@
 				5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */,
 				5123C783231A403700D39C24 /* OtherRequestViewController.swift */,
 				5123C78C231E2A6B00D39C24 /* CartaViewController.swift */,
+				51F4ADE22317BAAC00B4C8CE /* Parts.storyboard */,
 			);
 			path = TeamParts;
 			sourceTree = "<group>";
@@ -296,7 +322,9 @@
 				5123C7722319080600D39C24 /* picturePlaceholder100.png in Resources */,
 				5123C7742319080A00D39C24 /* picturePlaceholder50.png in Resources */,
 				5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */,
+				51EF935D233356EE000E780C /* memo.png in Resources */,
 				51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */,
+				51EF935C233356EE000E780C /* counselingSheet.png in Resources */,
 				5109ADDC23127D610050F6A2 /* LaunchScreen.storyboard in Resources */,
 				5109ADD923127D610050F6A2 /* Assets.xcassets in Resources */,
 				5109ADD723127D600050F6A2 /* Main.storyboard in Resources */,
@@ -353,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EF9359233348BF000E780C /* ForgetPasswordViewController.swift in Sources */,
 				5123C784231A403700D39C24 /* OtherRequestViewController.swift in Sources */,
 				5109AE0C2313B6610050F6A2 /* clinicViewController.swift in Sources */,
 				5123C7512317F30E00D39C24 /* ProfileViewController.swift in Sources */,
@@ -363,12 +392,15 @@
 				51EF9343232E357C000E780C /* GlobalVariable.swift in Sources */,
 				5123C77A231936B300D39C24 /* PartsRequestViewController.swift in Sources */,
 				51EF934C232F79AC000E780C /* SelectMainCartaDetailPositiveRequestViewController.swift in Sources */,
+				51EF936523335F55000E780C /* SelectDetailNegativeImageViewController.swift in Sources */,
 				5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */,
 				51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */,
 				5123C782231A401A00D39C24 /* DetailPositiveRequestViewController.swift in Sources */,
 				51D18D112327B2BD00FE18AA /* PartsCartaViewController.swift in Sources */,
 				51EF93572331FEE5000E780C /* SelectDetailImageViewController.swift in Sources */,
+				51EF936123335EBD000E780C /* SelectDetailPositiveImageViewController.swift in Sources */,
 				5109ADE8231280F90050F6A2 /* SignUpViewController.swift in Sources */,
+				51EF935F23335C22000E780C /* SelectPartsRequestImageViewController.swift in Sources */,
 				5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */,
 				5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */,
 				51EF9350232FA50F000E780C /* SelectMainCartaDetailNegativeRequestViewController.swift in Sources */,

@@ -49,6 +49,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rKQ-B8-B0r" appends="YES" id="lhh-l2-a6q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -74,6 +78,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mum-m2-qMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="rKQ-B8-B0r">
+                    <connections>
+                        <action selector="swipeRight:" destination="bPg-FX-Pga" id="s1Z-bF-LK2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2343.1999999999998" y="-218.7192118226601"/>
         </scene>
@@ -97,6 +106,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="VpH-ux-5JX" appends="YES" id="J3u-GU-XIZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -122,6 +135,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVB-FU-aQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="VpH-ux-5JX">
+                    <connections>
+                        <action selector="swipeRight:" destination="isb-r5-B69" id="Bd9-IC-LCU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2341.5999999999999" y="612.5615763546798"/>
         </scene>
@@ -269,7 +287,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVV-fM-OgG">
                                 <rect key="frame" x="101" y="539" width="172" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1234759077" green="0.89042797480000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="写真を選択">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -282,6 +300,11 @@
                         <viewLayoutGuide key="safeArea" id="Vew-yF-vs6"/>
                     </view>
                     <navigationItem key="navigationItem" title="新規メモ" id="zaR-oc-kEY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="aFl-LZ-Nr9">
+                            <connections>
+                                <action selector="back:" destination="mwB-wC-E1e" id="2x7-ZQ-asn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="CKe-dW-Nxo">
                             <connections>
                                 <action selector="saveButton:" destination="mwB-wC-E1e" id="1eE-Wv-77R"/>
@@ -302,7 +325,7 @@
         <scene sceneID="71T-TF-cxI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dub-im-QAv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="カウンセリングシート" id="mpm-1Z-jbA"/>
+                    <tabBarItem key="tabBarItem" title="カウンセリングシート" image="counselingSheet.png" selectedImage="counselingSheet.png" id="mpm-1Z-jbA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W4k-Vl-M5w">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -321,7 +344,7 @@
         <scene sceneID="MgN-Lh-jvL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zfN-9e-jhp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="クリニックメモ" id="OQs-1m-Cun"/>
+                    <tabBarItem key="tabBarItem" title="クリニックメモ" image="memo.png" id="OQs-1m-Cun"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZUM-5X-P5E">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -336,7 +359,7 @@
             </objects>
             <point key="canvasLocation" x="1431.8840579710145" y="612.72321428571422"/>
         </scene>
-        <!--カルテ-->
+        <!--カウンセリングシート-->
         <scene sceneID="Fww-kG-Ss7">
             <objects>
                 <viewController id="k9u-i7-6im" customClass="PartsCartaViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -524,7 +547,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kRp-zN-Kng"/>
                     </view>
-                    <navigationItem key="navigationItem" title="カルテ" id="2ee-fV-0I8">
+                    <navigationItem key="navigationItem" title="カウンセリングシート" id="2ee-fV-0I8">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="Fxp-bV-oce">
                             <connections>
                                 <action selector="backToMainTableView:" destination="k9u-i7-6im" id="6fp-br-OgG"/>
@@ -568,9 +591,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEz-OJ-5K7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5136.8000000000002" y="-1872.4137931034484"/>
+            <point key="canvasLocation" x="5308" y="-1438"/>
         </scene>
-        <!--Title-->
+        <!--画像の編集-->
         <scene sceneID="qzd-rX-cQC">
             <objects>
                 <viewController id="G9U-2B-SNr" customClass="SelectMainCartaPartsRequestImageViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -612,8 +635,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lYf-5d-F9k"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="tKP-F6-KdD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="6pE-3i-fBx">
+                    <navigationItem key="navigationItem" title="画像の編集" id="tKP-F6-KdD">
+                        <barButtonItem key="rightBarButtonItem" title="更新" id="6pE-3i-fBx">
                             <connections>
                                 <action selector="upDateImage:" destination="G9U-2B-SNr" id="CeU-Yd-j9c"/>
                             </connections>
@@ -626,7 +649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKg-hS-fBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6780" y="-2834"/>
+            <point key="canvasLocation" x="6950" y="-2372"/>
         </scene>
         <!--画像の編集-->
         <scene sceneID="9eA-J7-SAt">
@@ -685,9 +708,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aII-OR-2bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7722.3999999999996" y="-1872.4137931034484"/>
+            <point key="canvasLocation" x="6950" y="-1439"/>
         </scene>
-        <!--Title-->
+        <!--画像の編集-->
         <scene sceneID="vkr-mv-eJn">
             <objects>
                 <viewController id="8dQ-42-0FQ" customClass="SelectMainCartaDetailNegativeRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -730,8 +753,8 @@
                         <viewLayoutGuide key="safeArea" id="X4u-Hf-YHG"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="VUM-TY-tTJ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="6Va-oJ-AFa">
+                    <navigationItem key="navigationItem" title="画像の編集" id="VUM-TY-tTJ">
+                        <barButtonItem key="rightBarButtonItem" title="更新" id="6Va-oJ-AFa">
                             <connections>
                                 <action selector="upDateImage:" destination="8dQ-42-0FQ" id="bTE-7q-x40"/>
                             </connections>
@@ -745,10 +768,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfa-qp-o2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6780" y="-815"/>
+            <point key="canvasLocation" x="6951" y="-381"/>
         </scene>
     </scenes>
     <resources>
+        <image name="counselingSheet.png" width="64" height="64"/>
+        <image name="memo.png" width="100" height="100"/>
         <image name="picturePlaceholder100.png" width="100" height="100"/>
     </resources>
 </document>

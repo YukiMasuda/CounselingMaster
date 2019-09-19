@@ -8,15 +8,17 @@
 
 import UIKit
 import NCMB
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        IQKeyboardManager.shared.enable = true
         NCMB.setApplicationKey("871d2549bb417d365df19c828de41bfb34ceabb27b9ac584b5feced3e6b49d66", clientKey: "c7eafaad5341fb58ecdfffa486a6caac665c9c7bce40b3c29b290a9d96d8ff81")
         
         

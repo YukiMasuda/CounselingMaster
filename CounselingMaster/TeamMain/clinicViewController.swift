@@ -18,13 +18,30 @@ class clinicViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         memoTableView.delegate = self
         memoTableView.dataSource = self
         memoTableView.tableFooterView = UIView()
+        // 引っ張って更新
+        setRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadTimeline()
+    }
+    
+    func setRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(reloadTimeline(refreshControl:)), for: .valueChanged)
+        memoTableView.addSubview(refreshControl)
+    }
+    
+    @objc func reloadTimeline(refreshControl: UIRefreshControl) {
+        refreshControl.beginRefreshing()
+        self.loadTimeline()
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            refreshControl.endRefreshing()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +67,6 @@ class clinicViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //降順に
         query?.order(byDescending: "createDate")
-        
         query?.whereKey("userId", equalTo: NCMBUser.current()?.objectId)
         query?.findObjectsInBackground({ (result, error) in
             if error != nil{
@@ -93,25 +109,33 @@ class clinicViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         let deleteAction = UIAlertAction(title: "退会", style: .default) { (action) in
-            let user = NCMBUser.current()
-            
-            user?.deleteInBackground({ (error) in
-                if error != nil{
-                    print("退会エラーです。")
-                    print(error)
-                }else{
-                    //ログアウト
-                    let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main
-                    )
-                    let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
-                    UIApplication.shared.keyWindow?.rootViewController = rootViewController
-                    //保存
-                    let ud = UserDefaults.standard
-                    ud.set(false, forKey: "isLogin")
-                    ud.synchronize()
-                    
-                }
-            })
+            let deleteAlert = UIAlertController(title: "退会", message: "一度退会したらデータは復元できません。本当に退会しますか？", preferredStyle: .alert)
+            let deleteOkAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                let user = NCMBUser.current()
+                user?.deleteInBackground({ (error) in
+                    if error != nil{
+                        print("退会エラーです。")
+                        print(error)
+                    }else{
+                        //ログアウト
+                        let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main
+                        )
+                        let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
+                        UIApplication.shared.keyWindow?.rootViewController = rootViewController
+                        //保存
+                        let ud = UserDefaults.standard
+                        ud.set(false, forKey: "isLogin")
+                        ud.synchronize()
+                        
+                    }
+                })
+            }
+            let deleteCancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (al) in
+                deleteAlert.dismiss(animated: true, completion: nil)
+            }
+            deleteAlert.addAction(deleteOkAction)
+            deleteAlert.addAction(deleteCancelAction)
+            self.present(deleteAlert, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
             self.dismiss(animated: true, completion: nil)
@@ -121,12 +145,22 @@ class clinicViewController: UIViewController, UITableViewDelegate, UITableViewDa
         alert.addAction(cancelAction)
         alert.addAction(deleteAction)
         self.present(alert, animated: true, completion: nil)
-        
+    }
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        print("AA")
+//        var selectedIndexPath = memoTableView.indexPathForSelectedRow
+//        let cell = memoTableView.dequeueReusableCell(withIdentifier: "Cell")
         
     }
     
-    
-    
-
-
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let changeRed: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "赤にする") { (action, indexPath) in
+            tableView.cellForRow(at: indexPath)?.backgroundColor = .red
+        }
+        let changeBlue: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "青にする") { (action, indexPath) in
+            tableView.cellForRow(at: indexPath)?.backgroundColor = .blue
+        }
+        return [changeRed, changeBlue]
+    }
 }

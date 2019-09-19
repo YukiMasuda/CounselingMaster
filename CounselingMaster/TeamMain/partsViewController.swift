@@ -24,21 +24,32 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         memoTableView.delegate = self
         
         memoTableView.tableFooterView = UIView()
-        
-
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 50, blue: 41, alpha: 1)
+        // 引っ張って更新
+        setRefreshControl()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         loadTimeline()
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return object.count
     }
     
+    func setRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(reloadTimeline(refreshControl:)), for: .valueChanged)
+        memoTableView.addSubview(refreshControl)
+    }
     
+    @objc func reloadTimeline(refreshControl: UIRefreshControl) {
+        refreshControl.beginRefreshing()
+        self.loadTimeline()
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            refreshControl.endRefreshing()
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -119,27 +130,33 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         let deleteAction = UIAlertAction(title: "退会", style: .default) { (action) in
-            let user = NCMBUser.current()
-            
-            user?.deleteInBackground({ (error) in
-                if error != nil{
-                    print("退会エラーです。")
-                    print(error)
-                }else{
-                    
-                    //ログアウト
-                    let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main
-                    )
-                    let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
-                    UIApplication.shared.keyWindow?.rootViewController = rootViewController
-                    
-                    //保存
-                    let ud = UserDefaults.standard
-                    ud.set(false, forKey: "isLogin")
-                    ud.synchronize()
-                    
-                }
-            })
+            let deleteAlert = UIAlertController(title: "退会", message: "一度退会したらデータは復元できません。本当に退会しますか？", preferredStyle: .alert)
+            let deleteOkAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                let user = NCMBUser.current()
+                user?.deleteInBackground({ (error) in
+                    if error != nil{
+                        print("退会エラーです。")
+                        print(error)
+                    }else{
+                        //ログアウト
+                        let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main
+                        )
+                        let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
+                        UIApplication.shared.keyWindow?.rootViewController = rootViewController
+                        //保存
+                        let ud = UserDefaults.standard
+                        ud.set(false, forKey: "isLogin")
+                        ud.synchronize()
+                        
+                    }
+                })
+            }
+            let deleteCancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (al) in
+                deleteAlert.dismiss(animated: true, completion: nil)
+            }
+            deleteAlert.addAction(deleteOkAction)
+            deleteAlert.addAction(deleteCancelAction)
+            self.present(deleteAlert, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
             self.dismiss(animated: true, completion: nil)
@@ -171,6 +188,10 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.window?.rootViewController = rootViewController
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
+        
+    }
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         
     }
     

@@ -164,6 +164,18 @@ class AddMemoViewController: UIViewController, FusumaDelegate, UITextViewDelegat
 
     }
     
+    @IBAction func back(_ sender: Any) {
+        let alert = UIAlertController(title: "メモの削除", message: "メモを削除しますか？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     

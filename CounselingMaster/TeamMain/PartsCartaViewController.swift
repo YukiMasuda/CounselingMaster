@@ -15,7 +15,6 @@ class PartsCartaViewController: UIViewController {
     
     var tappedEditButton = 0
     var selectedObject: NCMBObject!
-    
     var partsRequestText: String!
     var partsRequestImage: UIImage?
     var selectSurgeryText: String!
@@ -25,13 +24,7 @@ class PartsCartaViewController: UIViewController {
     var detailNegativeImage: UIImage?
     var otherRequestText: String!
     var cartaTitleText: String!
-    
-    
 
-    
-    
-    
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var selectPartsLabel: UILabel!
@@ -48,13 +41,10 @@ class PartsCartaViewController: UIViewController {
     @IBOutlet weak var otherRequestTextView: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var trashButton: UIBarButtonItem!
-    
     @IBOutlet weak var selectPartsRequestImageButton: UIButton!
     @IBOutlet weak var selectDetailPositiveRequestImageButton: UIButton!
     @IBOutlet weak var selectDetailNegativeRequestImageButton: UIButton!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let ScrollFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
@@ -126,90 +116,20 @@ class PartsCartaViewController: UIViewController {
     }
     
     @IBAction func backToMainTableView(_ sender: Any) {
-        
-        
-        var partsRequestImage1Data = partsRequestImage1View.image?.pngData()
-        var partsRequestImage2Data = partsRequestImage2View.image?.pngData()
-        var detailPositiveRequestImage1Data = detailPositiveRequestImage1View.image?.pngData()
-        var detailPositiveRequestImage2Data = detailPositiveRequestImage2View.image?.pngData()
-        var detailNegativeRequestImage1Data = detailNegativeRequestImage1View.image?.pngData()
-        var detailNegativeRequestImage2Data = detailNegativeRequestImage2View.image?.pngData()
-        
-        var partsRequestImage1File = NCMBFile.file(with: partsRequestImage1Data) as! NCMBFile
-        var partsRequestImage2File = NCMBFile.file(with: partsRequestImage2Data) as! NCMBFile
-        var detailPositiveRequestImage1File = NCMBFile.file(with: detailPositiveRequestImage1Data) as! NCMBFile
-        var detailPositiveRequestImage2File = NCMBFile.file(with: detailPositiveRequestImage2Data) as! NCMBFile
-       var detailNegativeRequestImage1File = NCMBFile.file(with: detailNegativeRequestImage1Data) as! NCMBFile
-        var detailNegativeRequestImage2File = NCMBFile.file(with: detailNegativeRequestImage2Data) as! NCMBFile
-        partsRequestImage1File.saveInBackground { (error) in
+        self.selectedObject?.setObject(self.partsRequestTextView.text, forKey: "partsRequest")
+        self.selectedObject?.setObject(self.selectSurgeryTextView.text, forKey: "selectSurgery")
+        self.selectedObject?.setObject(self.detailPositiveRequestTextView.text, forKey: "detailPositiveRequest")
+        self.selectedObject?.setObject(self.detailNegativeRequestTextView.text, forKey: "detailNegativeRequest")
+        self.selectedObject?.setObject(self.otherRequestTextView.text, forKey: "otherRequest")
+        self.selectedObject?.setObject(self.selectPartsLabel.text, forKey: "selectedParts")
+        self.selectedObject?.setObject(NCMBUser.current()?.objectId, forKey: "userId")
+        self.selectedObject?.saveInBackground({ (error) in
             if error != nil{
                 print(error)
             }else{
-                partsRequestImage2File.saveInBackground({ (error) in
-                    if error != nil{
-                        print(error)
-                    }else{
-                        detailPositiveRequestImage1File.saveInBackground({ (error) in
-                            if error != nil{
-                                print(error)
-                            }else{
-                                detailPositiveRequestImage2File.saveInBackground({ (error) in
-                                    if error != nil{
-                                        print(error)
-                                    }else{
-                                        detailNegativeRequestImage1File.saveInBackground({ (error) in
-                                            if error != nil{
-                                                print(error)
-                                            }else{
-                                                detailNegativeRequestImage2File.saveInBackground({ (error) in
-                                                    if error != nil{
-                                                        print(error)
-                                                    }else{
-                                                        //画像アップロード成功後にobject保存
-                                                        
-                                                        
-                                                        self.selectedObject?.setObject(self.partsRequestTextView.text, forKey: "partsRequest")
-                                                        self.selectedObject?.setObject(self.selectSurgeryTextView.text, forKey: "selectSurgery")
-                                                        self.selectedObject?.setObject(self.detailPositiveRequestTextView.text, forKey: "detailPositiveRequest")
-                                                        self.selectedObject?.setObject(self.detailNegativeRequestTextView.text, forKey: "detailNegativeRequest")
-                                                        self.selectedObject?.setObject(self.otherRequestTextView.text, forKey: "otherRequest")
-                                                        self.selectedObject?.setObject(self.selectPartsLabel.text, forKey: "selectedParts")
-                                                        self.selectedObject?.setObject(NCMBUser.current()?.objectId, forKey: "userId")
-                                                        
-                                                        let url1 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + partsRequestImage1File.name
-                                                        let url2 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + partsRequestImage2File.name
-                                                        let url3 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + detailPositiveRequestImage1File.name
-                                                        let url4 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + detailPositiveRequestImage2File.name
-                                                        let url5 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + detailNegativeRequestImage1File.name
-                                                        let url6 = "https://mb.api.cloud.nifty.com/2013-09-01/applications/pgdHTTCiw5m6VaxV/publicFiles/" + detailNegativeRequestImage2File.name
-                                                        self.selectedObject?.setObject(url1, forKey: "partsRequestImage1")
-                                                        self.selectedObject?.setObject(url2, forKey: "partsRequestImage2")
-                                                        self.selectedObject?.setObject(url3, forKey: "detailPositiveRequestImage1")
-                                                        self.selectedObject?.setObject(url4, forKey: "detailPositiveRequestImage2")
-                                                        self.selectedObject?.setObject(url5, forKey: "detailNegativeRequestImage1")
-                                                        self.selectedObject?.setObject(url6, forKey: "detailNegativeRequestImage2")
-                                                        
-                                                        self.selectedObject?.saveInBackground({ (error) in
-                                                            if error != nil{
-                                                                print(error)
-                                                            }else{
-                                                                print("保存したで")
-                                                            }
-                                                        })
-                                                    }
-                                                })
-                                            }
-                                        })
-                                    }
-                                })
-                            }
-                        })
-                    }
-                })
-            }
-        }
-        
-        
+            print("保存したで")
+                }
+        })
         self.navigationController?.popViewController(animated: true)
     }
     

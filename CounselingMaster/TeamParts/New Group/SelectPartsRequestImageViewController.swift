@@ -1,65 +1,55 @@
 //
-//  PartsRequestViewController.swift
+//  SelectPartsRequestImageViewController.swift
 //  CounselingMaster
 //
-//  Created by 増田悠希 on 2019/08/30.
+//  Created by 増田悠希 on 2019/09/19.
 //  Copyright © 2019 Yuki Masuda. All rights reserved.
 //
 
 import UIKit
-import NCMB
 import NYXImagesKit
 import Fusuma
-import IQKeyboardManagerSwift
 
-
-class PartsRequestViewController :
-UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
-
+class SelectPartsRequestImageViewController: UIViewController, FusumaDelegate {
+    var image1: UIImage?
+    var image2: UIImage?
     
-    @IBOutlet weak var titleText: UITextView!
-    @IBOutlet weak var requestTextView: UITextView!
     @IBOutlet weak var firstImageView: UIImageView!
     @IBOutlet weak var secondImageView: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        requestTextView.text = ""
-        titleText.text = selectPartsName + "をどんな印象に変えたいですか？"
-
+        firstImageView.image = partsRequestImage1
+        secondImageView.image = partsRequestImage2
+        
     }
-
     
     //一枚画像が選択された時
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         print("イメージが一枚のみの")
-        partsRequestImage1 = image
-        secondImageView?.image = image.scale(byFactor: 0.4)
+        firstImageView.image = image.scale(byFactor: 0.4)
     }
     
     /*func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
-        print("EE")
-        
-    }*/
+     print("EE")
+     
+     }*/
     
     //複数画像が選択された時
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode, metaData: [ImageMetadata]) {
         print("選択された写真の数は\(images.count)枚です")
         var count: Double = 0
-            DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
-                if images.count == 1{
-                    partsRequestImage1 = images[0].scale(byFactor: 0.4)
-                   self.firstImageView.image = images[0]
-                }else{
-                    partsRequestImage1 = images[0].scale(byFactor: 0.4)
-                    partsRequestImage2 = images[1].scale(byFactor: 0.4)
-                    self.firstImageView.image = images[0]
-                    self.secondImageView.image = images[1]
-                }
-                self.fusumaClosed()
+        DispatchQueue.main.asyncAfter(deadline: .now() + (3.0 * count)) {
+            if images.count == 1{
+                self.firstImageView.image = images[0].scale(byFactor: 0.4)
+            }else{
+                self.firstImageView.image = images[0].scale(byFactor: 0.4)
+                self.secondImageView.image = images[1].scale(byFactor: 0.4)
             }
-            count += 1
+            self.fusumaClosed()
+        }
+        count += 1
     }
     
     //カメラが使用できなかった時
@@ -103,26 +93,29 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         present(fusuma, animated: true, completion: nil)
     }
     
-    //次のページへ
-    @IBAction func saveInfo(_ sender: Any) {
-        partsRequestText = requestTextView.text
-        self.performSegue(withIdentifier: "goToNext", sender: nil)
+    @IBAction func upDateImage(_ sender: Any) {
+        partsRequestImage1 = firstImageView.image
+        partsRequestImage2 = secondImageView.image
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func selectImage(_ sender: Any) {
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        fusuma.cropHeightRatio = 1.0
+        fusuma.allowMultipleSelection = true
+        fusuma.availableModes = [.library, .camera]
+        fusuma.photoSelectionLimit = 2
+        fusumaSavesImage = true
+        present(fusuma, animated: true, completion: nil)
     }
     
-    //カルテを破棄する
-    @IBAction func trash(_ sender: Any) {
-        let alert = UIAlertController(title: "カウンセリングシートの破棄", message: "カウンセリングシートを破棄しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            //Mainへ遷移するコード
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
-            UIApplication.shared.keyWindow?.rootViewController = rootViewController
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
+    @IBAction func deleteImage(_ sender: Any) {
+        firstImageView.image = nil
+        secondImageView.image = nil
+        partsRequestImage1 = nil
+        partsRequestImage2 = nil
     }
+    
+
+
 }

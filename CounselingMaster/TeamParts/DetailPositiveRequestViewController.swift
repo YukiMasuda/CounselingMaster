@@ -21,8 +21,10 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         requestTextView.text = ""
     }
+
     
     //一枚画像が選択された時
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
@@ -110,14 +112,9 @@ UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigat
         self.performSegue(withIdentifier: "goToNext", sender: nil)
     }
     
-    //キーボードを下げる
-    @IBAction func endEditingTextView(_ sender: Any) {
-        requestTextView.resignFirstResponder()
-    }
-    
     //ホームへ戻る
     @IBAction func trash(_ sender: Any) {
-        let alert = UIAlertController(title: "カルテの破棄", message: "カルテを破棄しますか？", preferredStyle: .alert)
+        let alert = UIAlertController(title: "カウンセリングシートの破棄", message: "カウンセリングシートを破棄しますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             //Mainへ遷移するコード
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
