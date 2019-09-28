@@ -17,6 +17,10 @@
 		5109AE0A2313B6540050F6A2 /* partsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109AE092313B6540050F6A2 /* partsViewController.swift */; };
 		5109AE0C2313B6610050F6A2 /* clinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109AE0B2313B6610050F6A2 /* clinicViewController.swift */; };
 		5109AE102316363C0050F6A2 /* Interview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109AE0F2316363C0050F6A2 /* Interview.storyboard */; };
+		511AA92223385173002E7376 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA92123385173002E7376 /* ContactViewController.swift */; };
+		511AA924233B2DC0002E7376 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA923233B2DC0002E7376 /* TermsOfServiceViewController.swift */; };
+		511AA926233B2DEC002E7376 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA925233B2DEC002E7376 /* PrivacyPolicyViewController.swift */; };
+		511AA928233B5A97002E7376 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511AA927233B5A97002E7376 /* MessageUI.framework */; };
 		5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5123C74D2317ECB000D39C24 /* Profile.storyboard */; };
 		5123C7512317F30E00D39C24 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C7502317F30E00D39C24 /* ProfileViewController.swift */; };
 		5123C7722319080600D39C24 /* picturePlaceholder100.png in Resources */ = {isa = PBXBuildFile; fileRef = 5123C7712319080600D39C24 /* picturePlaceholder100.png */; };
@@ -28,7 +32,6 @@
 		5123C784231A403700D39C24 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C783231A403700D39C24 /* OtherRequestViewController.swift */; };
 		5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */; };
 		5123C78D231E2A6B00D39C24 /* CartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5123C78C231E2A6B00D39C24 /* CartaViewController.swift */; };
-		51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D18CE72326225900FE18AA /* ClinicCarta.storyboard */; };
 		51D18D112327B2BD00FE18AA /* PartsCartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */; };
 		51EF933F232DDA62000E780C /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF933E232DDA62000E780C /* AddMemoViewController.swift */; };
 		51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */; };
@@ -63,6 +66,10 @@
 		5109AE092313B6540050F6A2 /* partsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = partsViewController.swift; sourceTree = "<group>"; };
 		5109AE0B2313B6610050F6A2 /* clinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clinicViewController.swift; sourceTree = "<group>"; };
 		5109AE0F2316363C0050F6A2 /* Interview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interview.storyboard; sourceTree = "<group>"; };
+		511AA92123385173002E7376 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		511AA923233B2DC0002E7376 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		511AA925233B2DEC002E7376 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		511AA927233B5A97002E7376 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5123C74D2317ECB000D39C24 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5123C7502317F30E00D39C24 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5123C7712319080600D39C24 /* picturePlaceholder100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picturePlaceholder100.png; sourceTree = "<group>"; };
@@ -74,7 +81,6 @@
 		5123C783231A403700D39C24 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
 		5123C785231A410700D39C24 /* DetailNegativeRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNegativeRequestViewController.swift; sourceTree = "<group>"; };
 		5123C78C231E2A6B00D39C24 /* CartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaViewController.swift; sourceTree = "<group>"; };
-		51D18CE72326225900FE18AA /* ClinicCarta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClinicCarta.storyboard; sourceTree = "<group>"; };
 		51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCartaViewController.swift; sourceTree = "<group>"; };
 		51EF933E232DDA62000E780C /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddMemoViewController.swift; path = ../TeamMain/AddMemoViewController.swift; sourceTree = "<group>"; };
 		51EF9340232DDA6F000E780C /* DetailMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailMemoViewController.swift; path = ../TeamMain/DetailMemoViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511AA928233B5A97002E7376 /* MessageUI.framework in Frameworks */,
 				C58C3DD92EB66D6DFA9FBFBA /* Pods_CounselingMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,8 +139,6 @@
 				5109AE4F231681970050F6A2 /* TeamSignIn */,
 				5109AE51231681FF0050F6A2 /* TeamMain */,
 				51F4ADDF2317B94300B4C8CE /* TeamParts */,
-				51F4ADE12317B97600B4C8CE /* TeamClinic */,
-				51D18CE9232624CD00FE18AA /* TeamClinicCarta */,
 				5109ADD823127D610050F6A2 /* Assets.xcassets */,
 				5109ADDA23127D610050F6A2 /* LaunchScreen.storyboard */,
 				5109AE0F2316363C0050F6A2 /* Interview.storyboard */,
@@ -147,8 +152,10 @@
 			children = (
 				5109ADE5231280EB0050F6A2 /* SignInViewController.swift */,
 				5109ADE7231280F90050F6A2 /* SignUpViewController.swift */,
-				5109ADE323127DCF0050F6A2 /* SignIn.storyboard */,
 				51EF9358233348BF000E780C /* ForgetPasswordViewController.swift */,
+				511AA923233B2DC0002E7376 /* TermsOfServiceViewController.swift */,
+				511AA925233B2DEC002E7376 /* PrivacyPolicyViewController.swift */,
+				5109ADE323127DCF0050F6A2 /* SignIn.storyboard */,
 			);
 			path = TeamSignIn;
 			sourceTree = "<group>";
@@ -159,10 +166,11 @@
 				51EF93552330EF23000E780C /* New Group */,
 				5109AE092313B6540050F6A2 /* partsViewController.swift */,
 				5109AE0B2313B6610050F6A2 /* clinicViewController.swift */,
+				51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */,
 				51EF9344232E80B2000E780C /* SelectMainCartaPartsRequestImageViewController.swift */,
 				51EF934B232F79AC000E780C /* SelectMainCartaDetailPositiveRequestViewController.swift */,
 				51EF934F232FA50F000E780C /* SelectMainCartaDetailNegativeRequestViewController.swift */,
-				51D18D102327B2BD00FE18AA /* PartsCartaViewController.swift */,
+				511AA92123385173002E7376 /* ContactViewController.swift */,
 				5109ADD523127D600050F6A2 /* Main.storyboard */,
 			);
 			path = TeamMain;
@@ -186,14 +194,6 @@
 				51EF935B233356EE000E780C /* memo.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		51D18CE9232624CD00FE18AA /* TeamClinicCarta */ = {
-			isa = PBXGroup;
-			children = (
-				51D18CE72326225900FE18AA /* ClinicCarta.storyboard */,
-			);
-			path = TeamClinicCarta;
 			sourceTree = "<group>";
 		};
 		51EF93552330EF23000E780C /* New Group */ = {
@@ -233,16 +233,10 @@
 			path = TeamParts;
 			sourceTree = "<group>";
 		};
-		51F4ADE12317B97600B4C8CE /* TeamClinic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TeamClinic;
-			sourceTree = "<group>";
-		};
 		6004C9253F144659FE365F43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				511AA927233B5A97002E7376 /* MessageUI.framework */,
 				0736A627D5DF56B1DF19B6E0 /* Pods_CounselingMaster.framework */,
 			);
 			name = Frameworks;
@@ -323,7 +317,6 @@
 				5123C7742319080A00D39C24 /* picturePlaceholder50.png in Resources */,
 				5123C74E2317ECB000D39C24 /* Profile.storyboard in Resources */,
 				51EF935D233356EE000E780C /* memo.png in Resources */,
-				51D18CE82326225900FE18AA /* ClinicCarta.storyboard in Resources */,
 				51EF935C233356EE000E780C /* counselingSheet.png in Resources */,
 				5109ADDC23127D610050F6A2 /* LaunchScreen.storyboard in Resources */,
 				5109ADD923127D610050F6A2 /* Assets.xcassets in Resources */,
@@ -396,6 +389,9 @@
 				5123C786231A410700D39C24 /* DetailNegativeRequestViewController.swift in Sources */,
 				51EF9341232DDA6F000E780C /* DetailMemoViewController.swift in Sources */,
 				5123C782231A401A00D39C24 /* DetailPositiveRequestViewController.swift in Sources */,
+				511AA926233B2DEC002E7376 /* PrivacyPolicyViewController.swift in Sources */,
+				511AA92223385173002E7376 /* ContactViewController.swift in Sources */,
+				511AA924233B2DC0002E7376 /* TermsOfServiceViewController.swift in Sources */,
 				51D18D112327B2BD00FE18AA /* PartsCartaViewController.swift in Sources */,
 				51EF93572331FEE5000E780C /* SelectDetailImageViewController.swift in Sources */,
 				51EF936123335EBD000E780C /* SelectDetailPositiveImageViewController.swift in Sources */,

@@ -20,11 +20,19 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/255, green: 90/255, blue: 86/255, alpha: 100/100)
+        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255, green: 90/255, blue: 86/255, alpha: 100/100)
         memoTableView.dataSource = self
         memoTableView.delegate = self
         
         memoTableView.tableFooterView = UIView()
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 50, blue: 41, alpha: 1)
         // 引っ張って更新
         setRefreshControl()
         
@@ -151,12 +159,16 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
                     }
                 })
             }
-            let deleteCancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (al) in
+            let deleteCancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
                 deleteAlert.dismiss(animated: true, completion: nil)
             }
             deleteAlert.addAction(deleteOkAction)
             deleteAlert.addAction(deleteCancelAction)
             self.present(deleteAlert, animated: true, completion: nil)
+        }
+        
+        let contactAction = UIAlertAction(title: "ご意見、お問い合わせ", style: .default) { (action) in
+            self.performSegue(withIdentifier: "toContact", sender: nil)
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
             self.dismiss(animated: true, completion: nil)
@@ -165,6 +177,8 @@ class partsViewController: UIViewController, UITableViewDataSource, UITableViewD
         alert.addAction(signOutAction)
         alert.addAction(cancelAction)
         alert.addAction(deleteAction)
+        alert.addAction(contactAction)
+        alert.popoverPresentationController?.sourceView = self.view
         self.present(alert, animated: true, completion: nil)
         
     }

@@ -47,6 +47,15 @@ class PartsCartaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/255, green: 90/255, blue: 86/255, alpha: 100/100)
+        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255, green: 90/255, blue: 86/255, alpha: 100/100)
         let ScrollFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         scrollView.frame = ScrollFrame
         let contentRect = contentView.bounds
@@ -107,10 +116,10 @@ class PartsCartaViewController: UIViewController {
   //button押された回数に応じてbuttonのlabelをeditかdoneに変更する。
         tappedEditButton += 1
         if tappedEditButton % 2 == 0{
-            editButton.title = "edit"
+            editButton.title = "編集"
             notEditable()
         }else{
-            editButton.title = "done"
+            editButton.title = "完了"
             editable()
         }
     }

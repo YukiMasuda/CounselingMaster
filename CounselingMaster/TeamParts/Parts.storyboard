@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="どのパーツを整形しますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-fg-aV0">
-                                <rect key="frame" x="74" y="174" width="226" height="27"/>
+                                <rect key="frame" x="74" y="103" width="226" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ifB-ET-Vt9">
-                                <rect key="frame" x="45" y="104" width="284" height="29"/>
+                                <rect key="frame" x="45" y="150" width="284" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="顔"/>
@@ -155,6 +155,7 @@
                                     <segment title="皮膚"/>
                                     <segment title="老化予防"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segment:" destination="MrD-fs-7WT" eventType="valueChanged" id="qcv-Jd-TuJ"/>
                                 </connections>
@@ -164,7 +165,6 @@
                         <viewLayoutGuide key="safeArea" id="ROe-JC-VW1"/>
                     </view>
                     <navigationItem key="navigationItem" id="sQX-4r-sHM">
-                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="YqQ-mo-wg1">
                             <connections>
                                 <action selector="trash:" destination="MrD-fs-7WT" id="i3G-Nr-61S"/>
@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="-111" y="98"/>
         </scene>
-        <!--6-->
+        <!--Other Request View Controller-->
         <scene sceneID="B2Z-od-faq">
             <objects>
                 <viewController id="PK1-IU-sa8" customClass="OtherRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,14 +232,14 @@
                                 <rect key="frame" x="8" y="178" width="359" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oLS-l2-1uJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="6" id="YTh-sH-TSL">
+                    <navigationItem key="navigationItem" id="YTh-sH-TSL">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="F0K-W8-hSS">
                             <connections>
                                 <action selector="trash:" destination="PK1-IU-sa8" id="uov-b5-Kg7"/>
@@ -260,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="6264.8000000000002" y="97.536945812807886"/>
         </scene>
-        <!--2-->
+        <!--Parts Request View Controller-->
         <scene sceneID="miB-FG-lQv">
             <objects>
                 <viewController id="GEf-3e-Wj7" customClass="PartsRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,13 +310,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8iv-pd-dBD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="2" id="qV1-Mi-Mez">
+                    <navigationItem key="navigationItem" id="qV1-Mi-Mez">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="kqO-5m-k8n">
                             <connections>
                                 <action selector="trash:" destination="GEf-3e-Wj7" id="d7w-3c-549"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WYb-3q-acp">
+                        <barButtonItem key="rightBarButtonItem" title="次へ" id="WYb-3q-acp">
                             <connections>
                                 <action selector="saveInfo:" destination="GEf-3e-Wj7" id="R4A-9s-AjU"/>
                             </connections>
@@ -334,7 +334,7 @@
             </objects>
             <point key="canvasLocation" x="2072.8000000000002" y="97.536945812807886"/>
         </scene>
-        <!--Title-->
+        <!--Select Surgery View Controller-->
         <scene sceneID="G7R-Mv-Mv8">
             <objects>
                 <viewController id="5aQ-xI-hcO" customClass="SelectSurgeryViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,13 +360,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="a0W-R3-PLX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="deE-4L-q2u">
+                    <navigationItem key="navigationItem" id="deE-4L-q2u">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="mWP-zw-9fb">
                             <connections>
                                 <action selector="trash:" destination="5aQ-xI-hcO" id="jjZ-tv-k8A"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="NjI-GM-X17">
+                        <barButtonItem key="rightBarButtonItem" title="次へ" id="NjI-GM-X17">
                             <connections>
                                 <action selector="saveInfo:" destination="5aQ-xI-hcO" id="hyk-c7-a2G"/>
                             </connections>
@@ -381,7 +381,7 @@
             </objects>
             <point key="canvasLocation" x="3192.8000000000002" y="97.536945812807886"/>
         </scene>
-        <!--4-->
+        <!--Detail Positive Request View Controller-->
         <scene sceneID="Mky-kx-kRX">
             <objects>
                 <viewController id="vjD-2J-dzg" customClass="DetailPositiveRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -431,7 +431,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e4m-ny-jRX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="4" id="kL0-bW-FSb">
+                    <navigationItem key="navigationItem" id="kL0-bW-FSb">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="cl5-wH-BEA">
                             <connections>
                                 <action selector="trash:" destination="vjD-2J-dzg" id="hZr-Gv-0OO"/>
@@ -454,7 +454,7 @@
             </objects>
             <point key="canvasLocation" x="4172" y="98"/>
         </scene>
-        <!--5-->
+        <!--Detail Negative Request View Controller-->
         <scene sceneID="qsc-Ce-BCA">
             <objects>
                 <viewController id="V2G-To-rLp" customClass="DetailNegativeRequestViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -504,7 +504,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CbE-9X-8pd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="5" id="3cJ-Gs-hNP">
+                    <navigationItem key="navigationItem" id="3cJ-Gs-hNP">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="YRc-Vj-tch">
                             <connections>
                                 <action selector="trash:" destination="V2G-To-rLp" id="vJD-lR-TWD"/>
@@ -527,7 +527,7 @@
             </objects>
             <point key="canvasLocation" x="5233" y="98"/>
         </scene>
-        <!--カルテ-->
+        <!--カウンセリングシート-->
         <scene sceneID="Xt6-LX-YPr">
             <objects>
                 <viewController id="YbJ-No-m4f" customClass="CartaViewController" customModule="CounselingMaster" customModuleProvider="target" sceneMemberID="viewController">
@@ -551,7 +551,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic5-RH-988">
-                                                <rect key="frame" x="75" y="83" width="292" height="46"/>
+                                                <rect key="frame" x="34" y="83" width="333" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -598,7 +598,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-Nr-UYZ">
-                                                <rect key="frame" x="34" y="1256" width="321" height="229"/>
+                                                <rect key="frame" x="34" y="1256" width="333" height="229"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -637,14 +637,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dEi-xh-Cp6">
-                                                <rect key="frame" x="34" y="2498" width="321" height="229"/>
+                                                <rect key="frame" x="34" y="2498" width="333" height="229"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-lB-ya2">
-                                                <rect key="frame" x="34" y="1821" width="321" height="229"/>
+                                                <rect key="frame" x="34" y="1821" width="333" height="229"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -666,10 +666,10 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-Lu-irW">
-                                                <rect key="frame" x="132" y="1708" width="109" height="30"/>
+                                                <rect key="frame" x="107" y="1708" width="150" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="画像の編集">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -685,10 +685,10 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFv-ux-Vop">
-                                                <rect key="frame" x="92" y="781" width="194" height="30"/>
+                                                <rect key="frame" x="92" y="781" width="150" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="画像の編集">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -696,10 +696,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBM-eC-Biv">
-                                                <rect key="frame" x="135" y="2339" width="109" height="30"/>
+                                                <rect key="frame" x="135" y="2339" width="150" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1218025256" green="0.89126395820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="画像の編集">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -715,15 +715,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hY7-E8-xdu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="カルテ" id="fYg-FE-hHt">
-                        <barButtonItem key="leftBarButtonItem" title="保存" id="lyH-kl-z5K">
-                            <connections>
-                                <action selector="backToMainTableView:" destination="YbJ-No-m4f" id="QdC-DN-pSd"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="edit" id="fdi-Ni-Tqk">
+                    <navigationItem key="navigationItem" title="カウンセリングシート" id="fYg-FE-hHt">
+                        <barButtonItem key="leftBarButtonItem" title="編集" id="fdi-Ni-Tqk">
                             <connections>
                                 <action selector="edit:" destination="YbJ-No-m4f" id="uFl-n8-mhv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="lyH-kl-z5K">
+                            <connections>
+                                <action selector="backToMainTableView:" destination="YbJ-No-m4f" id="QdC-DN-pSd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -796,6 +796,11 @@
                         <viewLayoutGuide key="safeArea" id="nSg-oO-eAn"/>
                     </view>
                     <navigationItem key="navigationItem" title="画像の編集" id="AKK-2G-gLa">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="pKG-26-eVb">
+                            <connections>
+                                <action selector="back:" destination="NKQ-o1-kVE" id="IPy-x3-SXx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="更新" id="Esb-OA-fb0">
                             <connections>
                                 <action selector="upDateImage:" destination="NKQ-o1-kVE" id="wLD-h7-eBZ"/>
@@ -854,6 +859,11 @@
                         <viewLayoutGuide key="safeArea" id="eu9-gH-ceG"/>
                     </view>
                     <navigationItem key="navigationItem" title="画像の編集" id="qCX-4S-VkQ">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="JFy-Qm-HUC">
+                            <connections>
+                                <action selector="back:" destination="YDw-fX-s1J" id="Efh-FA-v2T"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="更新" id="ti0-on-ive">
                             <connections>
                                 <action selector="upDateImage:" destination="YDw-fX-s1J" id="Wop-fQ-0cY"/>
@@ -912,6 +922,11 @@
                         <viewLayoutGuide key="safeArea" id="SbO-fF-nXf"/>
                     </view>
                     <navigationItem key="navigationItem" title="画像の編集" id="vo5-UK-qry">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="w7P-Zk-Fbu">
+                            <connections>
+                                <action selector="back:" destination="DQv-ti-twi" id="OKq-Pb-eEM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="更新" id="LHF-Fc-YuQ">
                             <connections>
                                 <action selector="upDateImage:" destination="DQv-ti-twi" id="2Hl-YO-O3K"/>
